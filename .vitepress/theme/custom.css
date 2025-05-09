@@ -1,0 +1,302 @@
+/* .vitepress/theme/custom.css */
+
+/* 自定义CSS变量覆盖默认主题 */
+:root {
+  --vp-c-brand: #3eaf7c;
+  --vp-c-brand-light: #4abf8a;
+  --vp-c-brand-dark: #33a06f;
+  --go-primary-color: #00ADD8;
+  --go-secondary-color: #5DC9E2;
+  --go-dark-color: #2E333E;
+}
+
+/* 添加自定义样式 */
+.category-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.category-item {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.date {
+  font-size: 0.85em;
+  color: var(--vp-c-text-2);
+}
+
+/* Go语言模块样式 */
+.go-section {
+  padding: 3rem 0;
+  background-color: #f9f9f9;
+}
+
+.go-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.go-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.go-header h2 {
+  color: var(--go-primary-color);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.go-header p {
+  font-size: 1.2rem;
+  color: var(--go-dark-color);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.go-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.go-feature {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.go-feature:hover {
+  transform: translateY(-5px);
+}
+
+.go-feature-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: rgba(0, 173, 216, 0.1);
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.go-feature-icon svg {
+  width: 32px;
+  height: 32px;
+  fill: var(--go-primary-color);
+}
+
+.go-feature h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+  color: var(--go-dark-color);
+}
+
+.go-feature p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.go-cta {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.go-button {
+  display: inline-block;
+  background-color: var(--go-primary-color);
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 4px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.go-button:hover {
+  background-color: #0091B8;
+  text-decoration: none;
+}
+
+.go-projects {
+  margin-top: 4rem;
+}
+
+.go-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.go-project {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.go-project-image {
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+}
+
+.go-project-content {
+  padding: 1.5rem;
+}
+
+.go-project h3 {
+  margin-bottom: 0.8rem;
+  font-size: 1.3rem;
+}
+
+.go-project p {
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.go-project-link {
+  display: inline-block;
+  color: var(--go-primary-color);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.go-project-link:hover {
+  text-decoration: underline;
+}
+
+/* 首页其他组件的样式优化 */
+.home-hero .image {
+  width: 200px;
+  height: 200px;
+}
+
+.custom-section {
+  padding: 4rem 0;
+  border-top: 1px solid #eee;
+}
+
+.custom-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.custom-section .title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #2c3e50;
+}
+
+.custom-section .articles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.custom-section .article {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.custom-section .article h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+}
+
+.custom-section .article p {
+  margin-bottom: 1rem;
+  color: #666;
+}
+
+.custom-section .article a {
+  color: #3eaf7c;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.custom-section .article a:hover {
+  text-decoration: underline;
+}
+
+.custom-section .view-all {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.custom-section .view-all a {
+  color: #3eaf7c;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.custom-section .view-all a:hover {
+  text-decoration: underline;
+}
+
+/* 课程卡片样式 */
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.course-card {
+  display: block;
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  text-decoration: none;
+}
+
+.course-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1rem;
+}
+
+.course-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+  color: #2c3e50;
+}
+
+.course-card p {
+  color: #666;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .custom-section .articles,
+  .course-grid,
+  .go-features,
+  .go-projects-grid {
+    grid-template-columns: 1fr;
+  }
+} 
