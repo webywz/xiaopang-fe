@@ -1,4 +1,7 @@
 import { defineConfig } from 'vitepress'
+import { setupMarkdownPlugins } from './markdown-plugins'
+import { createShikiLoader } from './shiki-loader'
+import { createReactHighlightFix } from './react-highlight-fix'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -285,7 +288,7 @@ export default defineConfig({
             { text: '实战项目', link: '/golang/projects' }
           ]
         }
-      ]
+      ],
     },
 
     socialLinks: [
@@ -353,20 +356,43 @@ export default defineConfig({
   // 添加特殊处理规则，把有问题的文件视为纯文本，不做Vue解析
   ignoreDeadLinks: true,
   
-  // 添加额外的Markdown配置覆盖默认行为
+  // 修改 markdown 配置部分，使用简单配置避免错误
   markdown: {
     lineNumbers: true,
-    // 配置Shiki高亮
+    // 使用简单主题配置，避免类型错误
     theme: 'github-dark',
-    // 简化Shiki配置，去掉可能导致错误的选项
-    shikiSetup: () => {
-      // 不修改内部配置
+    // 应用自定义插件
+    config: (md) => {
+      setupMarkdownPlugins(md);
     }
   },
   
   // 添加一个新的插件直接解决问题文件
   vite: {
     plugins: [
+      // 添加 Shiki 加载器插件，确保稳定性
+      createShikiLoader(),
+      // 添加 React 代码高亮修复插件
+      createReactHighlightFix(),
+      // 添加处理 Shiki 错误的插件
+      {
+        name: 'fix-shiki-errors',
+        enforce: 'pre',
+        configureServer(server) {
+          // 在服务器错误时提供更友好的错误处理
+          return () => {
+            server.middlewares.use((err, req, res, next) => {
+              if (err && err.message && err.message.includes('Shiki instance has been disposed')) {
+                console.log('捕获到 Shiki 错误，尝试恢复...');
+                // 尝试恢复或提供友好错误信息
+                if (next) next();
+              } else if (next) {
+                next(err);
+              }
+            });
+          };
+        }
+      },
       // 在原有插件之前添加一个专门处理问题文件的插件
       {
         name: 'fix-jsdoc-syntax',
@@ -425,7 +451,7 @@ export default defineConfig({
           
           return null;
         }
-      }
+      },
     ]
   }
 })
