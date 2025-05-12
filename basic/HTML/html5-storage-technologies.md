@@ -1611,7 +1611,6 @@ th {
 }
 
 code {
-  background-color: #f6f8fa;
   padding: 2px 5px;
   border-radius: 3px;
 }

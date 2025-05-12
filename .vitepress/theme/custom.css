@@ -8,6 +8,8 @@
   --go-primary-color: #00ADD8;
   --go-secondary-color: #5DC9E2;
   --go-dark-color: #2E333E;
+  --md-code-bg-light: #f6f8fa;
+  --md-code-bg-dark: #282c34;
 }
 
 /* 添加自定义样式 */
@@ -299,4 +301,46 @@
   .go-projects-grid {
     grid-template-columns: 1fr;
   }
-} 
+}
+
+/* Markdown 代码块主题适配：支持亮/暗色切换 */
+:root {
+  --md-code-bg-light: #f6f8fa;
+  --md-code-bg-dark: #282c34;
+}
+
+/* 亮色模式下 markdown 代码块背景 */
+html:not(.dark) .vp-doc div[class*=language-],
+html:not(.dark) .vp-doc pre {
+  background-color: var(--md-code-bg-light) !important;
+}
+
+/* 暗色模式下 markdown 代码块背景 */
+html.dark .vp-doc div[class*=language-],
+html.dark .vp-doc pre {
+  background-color: var(--md-code-bg-dark) !important;
+}
+
+/* 行内代码块适配 */
+html:not(.dark) .vp-doc :not(pre)>code {
+  background-color: #f6f8fa !important;
+}
+html.dark .vp-doc :not(pre)>code {
+  background-color: #23272e !important;
+}
+
+/**
+ * 强制覆盖 VitePress/shiki 代码块的内联背景色，支持亮/暗主题切换
+ * @see https://github.com/vuejs/vitepress/issues/1742
+ */
+html:not(.dark) .vp-doc div[class*="language-"].shiki,
+html:not(.dark) .vp-doc pre.shiki {
+  background-color: var(--md-code-bg-light) !important;
+}
+
+html.dark .vp-doc div[class*="language-"].shiki,
+html.dark .vp-doc pre.shiki {
+  background-color: var(--md-code-bg-dark) !important;
+}
+
+

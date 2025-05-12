@@ -11,7 +11,7 @@ HTML模板技术和虚拟DOM是现代前端开发的重要基础。模板技术�
 
 ## 关键技术点
 
-- 原生<template>标签与内容克隆
+- 原生`<template>`标签与内容克隆
 - 模板引擎（如Handlebars、EJS）
 - 虚拟DOM的基本原理与Diff算法
 - 虚拟DOM与真实DOM的映射与更新
@@ -19,7 +19,7 @@ HTML模板技术和虚拟DOM是现代前端开发的重要基础。模板技术�
 
 ## 实用案例与代码示例
 
-### 1. 原生<template>标签用法
+### 1. 原生`<template>`标签用法
 
 ```html
 <template id="user-item">

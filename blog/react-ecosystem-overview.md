@@ -13,7 +13,7 @@ description: 梳理React生态系统的各个组成部分，帮助开发者全�
 ## React技术栈思维导图
 
 <div class="mind-map">
-  <img src="/images/blog/react-ecosystem-mindmap.png" alt="React生态系统思维导图" />
+  <!-- <img src="/images/blog/react-ecosystem-mindmap.png" alt="React生态系统思维导图" /> -->
 </div>
 
 // ... 文章详细内容 ... 

@@ -2,6 +2,13 @@ import { defineConfig } from 'vitepress'
 import { setupMarkdownPlugins } from './markdown-plugins'
 import { createShikiLoader } from './shiki-loader'
 import { createReactHighlightFix } from './react-highlight-fix'
+import { createHtmlTemplateFix } from './html-template-fix'
+import { createHtmlSpecialTagsFix } from './html-special-tags-fix'
+
+/**
+ * 配置 VitePress 代码高亮主题，支持亮/暗模式自动切换
+ * @see https://vitepress.dev/zh/reference/site-config#markdown-theme
+ */
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -14,6 +21,26 @@ export default defineConfig({
     ['link', { rel: 'icon', href: '/favicon.ico' }],
     ['meta', { name: 'author', content: '前端小胖' }],
     ['meta', { name: 'keywords', content: '前端, Vue, React, TypeScript, Next.js, Nest.js, 前端工程化, 性能优化' }],
+    ['meta', { name: 'description', content: '前端小胖的技术之路，专注于前端开发、工程化、性能优化等内容。' }],
+    // SEO 相关
+    ['meta', { name: 'robots', content: 'index, follow' }],
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:title', content: '小胖的前端技术之路' }],
+    ['meta', { property: 'og:description', content: '前端小胖的技术之路，专注于前端开发、工程化、性能优化等内容。' }],
+    ['meta', { property: 'og:site_name', content: '小胖' }],
+    ['meta', { property: 'og:locale', content: 'zh_CN' }],
+    ['meta', { property: 'og:image', content: '/logo.png' }],
+    ['meta', { name: 'twitter:card', content: 'summary' }],
+    ['meta', { name: 'twitter:title', content: '小胖的前端技术之路' }],
+    ['meta', { name: 'twitter:description', content: '前端小胖的技术之路，专注于前端开发、工程化、性能优化等内容。' }],
+    ['meta', { name: 'twitter:image', content: '/logo.png' }],
+    // 结构化数据
+    ['script', { type: 'application/ld+json' }, JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "小胖的前端技术之路",
+      "url": "http://blog.66688.store/"
+    })]
   ],
   
   themeConfig: {
@@ -359,9 +386,10 @@ export default defineConfig({
   // 修改 markdown 配置部分，使用简单配置避免错误
   markdown: {
     lineNumbers: true,
-    // 使用简单主题配置，避免类型错误
-    theme: 'github-dark',
-    // 应用自定义插件
+    theme: {
+      light: 'github-light',
+      dark: 'github-dark'
+    },
     config: (md) => {
       setupMarkdownPlugins(md);
     }
@@ -370,6 +398,10 @@ export default defineConfig({
   // 添加一个新的插件直接解决问题文件
   vite: {
     plugins: [
+      // 添加通用的HTML特殊标签修复插件，最高优先级
+      createHtmlSpecialTagsFix(),
+      // 添加 HTML 模板修复插件，高优先级处理模板标签
+      createHtmlTemplateFix(),
       // 添加 Shiki 加载器插件，确保稳定性
       createShikiLoader(),
       // 添加 React 代码高亮修复插件
