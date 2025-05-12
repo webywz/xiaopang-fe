@@ -64,4 +64,23 @@ class Clock extends React.Component {
     );
   }
 }
-``` 
+```
+
+## React 周边生态
+
+React 生态系统非常丰富，涵盖了路由、状态管理、表单处理、样式方案、数据请求、测试等多个方面。常见的生态库有：
+
+- **路由**：react-router
+- **状态管理**：Redux、MobX、Recoil、Zustand 等
+- **表单处理**：Formik、react-hook-form
+- **样式方案**：styled-components、emotion、Tailwind CSS
+- **数据请求**：axios、react-query、SWR
+- **测试工具**：Jest、React Testing Library
+- **动画与 SEO**：Framer Motion、React Helmet 等
+
+详细用法与示例请参考 [React 生态系统](./ecosystem.md)。
+
+/**
+ * @module React生态
+ * @description 本节简要介绍了 React 生态常用库，帮助开发者选择合适的配套工具。
+ */ 

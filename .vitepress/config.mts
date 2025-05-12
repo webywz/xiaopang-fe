@@ -10,6 +10,16 @@ import { createHtmlSpecialTagsFix } from './html-special-tags-fix'
  * @see https://vitepress.dev/zh/reference/site-config#markdown-theme
  */
 
+/**
+ * Java 相关导航与侧边栏配置
+ * @description 为 VitePress 文档新增 Java 相关的导航和侧边栏入口，并细化内容
+ */
+
+/**
+ * SpringBoot 相关导航与侧边栏配置
+ * @description 为 VitePress 文档新增 SpringBoot 相关的导航和侧边栏入口，并细化内容
+ */
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "小胖",
@@ -91,6 +101,51 @@ export default defineConfig({
         items: [
           { text: 'Vue源码分析', link: '/vue-source-code/' },
           { text: 'Vue实践指南', link: '/vue-practical/' },
+        ]
+      },
+      {
+        text: 'Java',
+        items: [
+          { text: '环境搭建', link: '/java/setup' },
+          { text: '基础语法', link: '/java/basics' },
+          { text: '包与模块', link: '/java/packages-modules' },
+          { text: '面向对象', link: '/java/oop' },
+          { text: '集合框架', link: '/java/collections' },
+          { text: '异常处理', link: '/java/exception-handling' },
+          { text: 'IO流', link: '/java/io' },
+          { text: '并发编程', link: '/java/concurrency' },
+          { text: 'JVM与性能调优', link: '/java/jvm-performance' },
+          { text: '标准库', link: '/java/standard-library' },
+          { text: '常用工具类', link: '/java/utils' },
+          { text: '数据库与ORM', link: '/java/database' },
+          { text: '测试与Mock', link: '/java/testing' },
+          { text: '实战项目', link: '/java/projects' }
+        ]
+      },
+      {
+        text: 'Spring',
+        items: [
+          { text: '环境搭建', link: '/springboot/setup' },
+          { text: '核心注解', link: '/springboot/annotations' },
+          { text: '配置文件', link: '/springboot/configuration' },
+          { text: 'Web开发', link: '/springboot/web' },
+          { text: '数据访问', link: '/springboot/data-access' },
+          { text: '安全与认证', link: '/springboot/security' },
+          { text: '测试', link: '/springboot/testing' },
+          { text: '部署', link: '/springboot/deployment' },
+          { text: '实战项目', link: '/springboot/projects' },
+          { text: 'Spring Cloud Alibaba', link: '/spring/spring-cloud-alibaba' },
+          { text: 'Spring Boot Admin', link: '/spring/spring-boot-admin' },
+          { text: 'Spring WebFlux', link: '/spring/spring-webflux' },
+          { text: 'Spring AMQP', link: '/spring/spring-amqp' },
+          { text: 'Spring Session', link: '/spring/spring-session' },
+          { text: 'Spring Integration', link: '/spring/spring-integration' },
+          { text: 'Spring Batch', link: '/spring/spring-batch' },
+          { text: 'Spring MVC', link: '/spring/spring-mvc' },
+          { text: 'Spring Cloud', link: '/spring/spring-cloud' },
+          { text: 'Spring Security', link: '/spring/spring-security' },
+          { text: 'Spring Data', link: '/spring/spring-data' },
+          { text: 'Spring Framework', link: '/spring/spring-framework' }
         ]
       },
     ],
@@ -181,7 +236,7 @@ export default defineConfig({
             { text: '响应式系统', link: '/vue-source-code/reactivity' },
             { text: '渲染机制', link: '/vue-source-code/render-mechanism' },
             { text: '组件化实现', link: '/vue-source-code/component-system' },
-            { text: '编译优化', link: '/vue-source-code/compiler-optimization' },
+            { text: '编译优化', link: '/vue-source-code/compiler-optimization' }
           ]
         }
       ],
@@ -194,7 +249,7 @@ export default defineConfig({
             { text: '组件设计模式', link: '/vue-practical/component-patterns' },
             { text: '状态管理实践', link: '/vue-practical/state-management' },
             { text: '路由最佳实践', link: '/vue-practical/routing-practices' },
-            { text: '单元测试模式', link: '/vue-practical/unit-test-patterns' },
+            { text: '单元测试模式', link: '/vue-practical/unit-test-patterns' }
           ]
         }
       ],
@@ -205,14 +260,19 @@ export default defineConfig({
             { text: 'React 基础', link: '/react/' },
             { text: '组件与生命周期', link: '/react/components' },
             { text: 'Hooks 使用指南', link: '/react/hooks' },
+            { text: '路由', link: '/react/router' },
             { text: '状态管理', link: '/react/state-management' },
-            { text: '最佳实践指南', link: '/react/best-practices' },
+            { text: '表单处理', link: '/react/form' },
+            { text: '样式方案', link: '/react/style' },
+            { text: '数据请求', link: '/react/data-fetching' },
+            { text: '动画与 SEO', link: '/react/animation-seo' },
+            { text: '测试工具', link: '/react/testing' },
             { text: '性能优化', link: '/react/performance-optimization' },
             { text: 'TypeScript与React', link: '/react/typescript' },
-            { text: '测试策略', link: '/react/testing' },
-            { text: 'React生态系统', link: '/react/ecosystem' },
             { text: '服务端渲染', link: '/react/ssr' },
             { text: 'React设计模式', link: '/react/design-patterns' },
+            { text: '最佳实践指南', link: '/react/best-practices' },
+            { text: 'React生态系统', link: '/react/ecosystem' },
             { text: '实战项目', link: '/react/projects' },
             { text: 'React 18新特性', link: '/react/react18' }
           ]
@@ -252,12 +312,7 @@ export default defineConfig({
             { text: '守卫', link: '/nestjs/guards' },
             { text: '拦截器', link: '/nestjs/interceptors' },
             { text: '异常过滤器', link: '/nestjs/exception-filters' },
-            { text: '数据库集成', link: '/nestjs/database' }
-          ]
-        },
-        {
-          text: 'Nest.js 高级特性',
-          items: [
+            { text: '数据库集成', link: '/nestjs/database' },
             { text: '微服务', link: '/nestjs/microservices' },
             { text: 'GraphQL', link: '/nestjs/graphql' },
             { text: 'WebSocket', link: '/nestjs/websockets' },
@@ -313,6 +368,44 @@ export default defineConfig({
             { text: '标准库', link: '/golang/standard-library' },
             { text: '数据库与ORM', link: '/golang/database' },
             { text: '实战项目', link: '/golang/projects' }
+          ]
+        }
+      ],
+      '/java/': [
+        {
+          text: 'Java 基础',
+          items: [
+            { text: '环境搭建', link: '/java/setup' },
+            { text: '基础语法', link: '/java/basics' },
+            { text: '包与模块', link: '/java/packages-modules' },
+            { text: '面向对象', link: '/java/oop' },
+            { text: '集合框架', link: '/java/collections' },
+            { text: '异常处理', link: '/java/exception-handling' },
+            { text: 'IO流', link: '/java/io' },
+            { text: '并发编程', link: '/java/concurrency' },
+            { text: 'JVM与性能调优', link: '/java/jvm-performance' },
+            { text: '标准库', link: '/java/standard-library' },
+            { text: '常用工具类', link: '/java/utils' },
+            { text: '数据库与ORM', link: '/java/database' },
+            { text: '测试与Mock', link: '/java/testing' },
+            { text: '实战项目', link: '/java/projects' }
+          ]
+        }
+      ],
+      '/springboot/': [
+        {
+          text: 'SpringBoot 教程',
+          items: [
+            { text: 'SpringBoot简介', link: '/springboot/' },
+            { text: '环境搭建', link: '/springboot/setup' },
+            { text: '核心注解', link: '/springboot/annotations' },
+            { text: '配置文件', link: '/springboot/configuration' },
+            { text: 'Web开发', link: '/springboot/web' },
+            { text: '数据访问', link: '/springboot/data-access' },
+            { text: '安全与认证', link: '/springboot/security' },
+            { text: '测试', link: '/springboot/testing' },
+            { text: '部署', link: '/springboot/deployment' },
+            { text: '实战项目', link: '/springboot/projects' }
           ]
         }
       ],
