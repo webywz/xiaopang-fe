@@ -84,7 +84,7 @@ export default defineConfig({
       { 
         text: '全栈开发', 
         items: [
-          { text: 'nodeJs开发', link: '/basic/tags/nodejs/' },
+          { text: 'nodeJs开发', link: '/basic/nodeJS/' },
           { text: 'Next.js', link: '/nextjs/' },
           { text: 'Nest.js', link: '/nestjs/' },
         ]
@@ -692,12 +692,12 @@ export default defineConfig({
         {
           text: 'Web3 教程',
           items: [
-            { text: 'Web3简介', link: '/docs/web3/' },
-            { text: '以太坊基础', link: '/docs/web3/ethereum' },
-            { text: '智能合约', link: '/docs/web3/smart-contract' },
-            { text: '钱包与签名', link: '/docs/web3/wallet' },
-            { text: 'DApp开发', link: '/docs/web3/dapp' },
-            { text: '常见工具', link: '/docs/web3/tools' }
+            { text: 'Web3简介', link: '/web3/' },
+            { text: '以太坊基础', link: '/web3/ethereum' },
+            { text: '智能合约', link: '/web3/smart-contract' },
+            { text: '钱包与签名', link: '/web3/wallet' },
+            { text: 'DApp开发', link: '/web3/dapp' },
+            { text: '常见工具', link: '/web3/tools' }
           ]
         }
       ],
