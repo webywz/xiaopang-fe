@@ -20,6 +20,11 @@ import { createHtmlSpecialTagsFix } from './html-special-tags-fix'
  * @description 为 VitePress 文档新增 SpringBoot 相关的导航和侧边栏入口，并细化内容
  */
 
+/**
+ * 基础进阶侧边栏配置
+ * @type {import('vitepress').DefaultTheme.Sidebar}
+ */
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "小胖",
@@ -148,9 +153,35 @@ export default defineConfig({
           { text: 'Spring Framework', link: '/spring/spring-framework' }
         ]
       },
+      {
+        text: 'Web3',
+        items: [
+          { text: 'Web3简介', link: '/web3/' },
+          { text: '以太坊基础', link: '/web3/ethereum' },
+          { text: '智能合约', link: '/web3/smart-contract' },
+          { text: '钱包与签名', link: '/web3/wallet' },
+          { text: 'DApp开发', link: '/web3/dapp' },
+          { text: '常见工具', link: '/web3/tools' }
+        ]
+      },
     ],
 
     sidebar: {
+      /**
+       * 基础进阶侧边栏配置
+       * @type {import('vitepress').DefaultTheme.Sidebar}
+       */
+      '/basic/tags/': [
+        {
+          text: '基础进阶',
+          items: [
+            { text: 'JavaScript深入', link: '/basic/tags/javascript' },
+            { text: 'CSS高级技巧', link: '/basic/tags/css/' },
+            { text: 'HTML5新特性', link: '/basic/tags/html/' },
+            { text: '浏览器原理', link: '/basic/tags/browser/' },
+          ]
+        }
+      ],
       '/blog/': [
         {
           text: '技术博客',
@@ -406,6 +437,19 @@ export default defineConfig({
             { text: '测试', link: '/springboot/testing' },
             { text: '部署', link: '/springboot/deployment' },
             { text: '实战项目', link: '/springboot/projects' }
+          ]
+        }
+      ],
+      '/web3/': [
+        {
+          text: 'Web3 教程',
+          items: [
+            { text: 'Web3简介', link: '/web3/' },
+            { text: '以太坊基础', link: '/web3/ethereum' },
+            { text: '智能合约', link: '/web3/smart-contract' },
+            { text: '钱包与签名', link: '/web3/wallet' },
+            { text: 'DApp开发', link: '/web3/dapp' },
+            { text: '常见工具', link: '/web3/tools' }
           ]
         }
       ],
