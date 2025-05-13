@@ -2,10 +2,10 @@
 title: 主流ERC标准
 ---
 
-/**
+<!-- /**
  * @file 主流ERC标准
  * @description 详细介绍Solidity主流ERC标准（ERC-20、ERC-721、ERC-1155等）的原理、接口、实现、扩展与最佳实践，适合开发者参考。
- */
+ */ -->
 
 # 主流ERC标准
 

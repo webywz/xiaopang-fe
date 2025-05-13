@@ -172,7 +172,6 @@ export default defineConfig({
       {
         text: 'Solidity开发',
         items: [
-          { text: 'Solidity简介', link: '/solidity/' },
           { text: '基础语法', link: '/solidity/basics' },
           { text: '合约开发', link: '/solidity/contract-development' },
           { text: '常用工具链', link: '/solidity/tooling' },
@@ -424,67 +423,6 @@ export default defineConfig({
                 { text: 'CSS-in-JS解决方案对比', link: '/basic/css/css-in-js-comparison' },
                 { text: 'CSS模块化开发实践', link: '/basic/css/css-modules' },
                 { text: 'PostCSS插件开发指南', link: '/basic/css/postcss-plugin-development' }
-              ]
-            }
-          ]
-        }
-      ],
-      '/blog/': [
-        {
-          text: '技术博客',
-          items: [
-            { text: '博客首页', link: '/blog/' },
-            {
-              text: 'React系列',
-              collapsed: false,
-              items: [
-                { text: 'React 18中的Suspense与并发特性', link: '/blog/react-18-concurrent' },
-              ]
-            },
-            {
-              text: 'Vue系列',
-              collapsed: false,
-              items: [
-                { text: 'Vue 3性能优化实战', link: '/blog/vue3-performance' },
-              ]
-            },
-            {
-              text: '状态管理系列',
-              collapsed: false,
-              items: [
-                { text: '现代前端状态管理最佳实践', link: '/blog/modern-state-management' },
-              ]
-            },
-            {
-              text: 'TypeScript系列',
-              collapsed: false,
-              items: [
-                { text: 'TypeScript 5.0新特性详解', link: '/blog/typescript-5-features' },
-              ]
-            },
-            {
-              text: '工程化系列',
-              collapsed: false,
-              items: [
-                { text: '大型前端项目的Monorepo实践指南', link: '/blog/frontend-monorepo' },
-              ]
-            },
-            {
-              text: '实战项目系列',
-              collapsed: false,
-              items: [
-                { text: '从零搭建React+TypeScript项目', link: '/blog/project-react-typescript' },
-                { text: '基于Vue3的企业级中后台实战', link: '/blog/project-vue3-admin' },
-                { text: 'Next.js全栈应用开发实践', link: '/blog/project-nextjs-fullstack' },
-              ]
-            },
-            {
-              text: '源码解析系列',
-              collapsed: false,
-              items: [
-                { text: 'Vue 3响应式系统源码解析', link: '/blog/vue3-reactivity-source-code' },
-                { text: 'React Fiber架构源码解析', link: '/blog/react-fiber-source-code' },
-                { text: 'Vite插件系统源码解析', link: '/blog/vite-plugin-system-source-code' },
               ]
             }
           ]
@@ -749,7 +687,6 @@ export default defineConfig({
               text: 'Solidity基础',
               collapsed: false,
               items: [
-                { text: 'Solidity简介', link: '/solidity/' },
                 { text: '基础语法', link: '/solidity/basics' },
                 { text: '数据类型与变量', link: '/solidity/data-types' },
                 { text: '函数与修饰符', link: '/solidity/functions-modifiers' },
@@ -793,11 +730,72 @@ export default defineConfig({
               text: '实战项目',
               collapsed: false,
               items: [
-                { text: '代币合约开发', link: '/solidity/projects/token' },
+                { text: '代币合约开发', link: '/solidity/projects/' },
                 { text: 'NFT合约开发', link: '/solidity/projects/nft' },
                 { text: 'DAO与治理合约', link: '/solidity/projects/dao' },
                 { text: 'DeFi合约实战', link: '/solidity/projects/defi' },
                 { text: '综合实战案例', link: '/solidity/projects/cases' }
+              ]
+            }
+          ]
+        }
+      ],
+      '/blog/': [
+        {
+          text: '技术博客',
+          items: [
+            { text: '博客首页', link: '/blog/' },
+            {
+              text: 'React系列',
+              collapsed: false,
+              items: [
+                { text: 'React 18中的Suspense与并发特性', link: '/blog/react-18-concurrent' },
+              ]
+            },
+            {
+              text: 'Vue系列',
+              collapsed: false,
+              items: [
+                { text: 'Vue 3性能优化实战', link: '/blog/vue3-performance' },
+              ]
+            },
+            {
+              text: '状态管理系列',
+              collapsed: false,
+              items: [
+                { text: '现代前端状态管理最佳实践', link: '/blog/modern-state-management' },
+              ]
+            },
+            {
+              text: 'TypeScript系列',
+              collapsed: false,
+              items: [
+                { text: 'TypeScript 5.0新特性详解', link: '/blog/typescript-5-features' },
+              ]
+            },
+            {
+              text: '工程化系列',
+              collapsed: false,
+              items: [
+                { text: '大型前端项目的Monorepo实践指南', link: '/blog/frontend-monorepo' },
+              ]
+            },
+            {
+              text: '实战项目系列',
+              collapsed: false,
+              items: [
+                { text: '从零搭建React+TypeScript项目', link: '/blog/project-react-typescript' },
+                { text: '基于Vue3的企业级中后台实战', link: '/blog/project-vue3-admin' },
+                { text: 'Next.js全栈应用开发实践', link: '/blog/project-nextjs-fullstack' },
+              ]
+            },
+            {
+              text: '源码解析系列',
+              collapsed: false,
+              items: [
+                { text: 'Vue 3响应式系统源码解析', link: '/blog/vue3-reactivity-source-code' },
+                { text: 'React Fiber架构源码解析', link: '/blog/react-fiber-source-code' },
+                { text: 'Vite插件系统源码解析', link: '/blog/vite-plugin-system-source-code' },
               ]
             }
           ]

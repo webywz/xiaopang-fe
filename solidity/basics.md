@@ -2,10 +2,10 @@
 title: Solidity 基础语法
 ---
 
-/**
+<!-- /**
  * @file Solidity 基础语法
  * @description 详细介绍Solidity的基本语法，包括变量声明、数据类型、函数定义、可见性修饰符、特殊函数等内容，适合初学者和有经验开发者查阅。
- */
+ */ -->
 
 # Solidity 基础语法
 

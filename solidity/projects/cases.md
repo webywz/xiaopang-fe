@@ -2,10 +2,10 @@
 title: Solidity 项目案例精选
 ---
 
-/**
+<!-- /**
  * @file Solidity 项目案例精选
  * @description 精选Token、NFT、DeFi、DAO等Solidity项目案例，配合关键代码、设计要点与实战分析，适合开发者参考与实战。
- */
+ */ -->
 
 # Solidity 项目案例精选
 

@@ -2,10 +2,10 @@
 title: 错误处理
 ---
 
-/**
+<!-- /**
  * @file 错误处理
  * @description 详细介绍Solidity中的异常处理、require、assert、revert、自定义错误及最佳实践，适合初学者和有经验开发者查阅。
- */
+ */ -->
 
 # 错误处理
 
