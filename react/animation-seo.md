@@ -28,7 +28,7 @@ Framer Motion 是最流行的 React 动画库，API 简洁，支持物理动画�
 
 ### 基础用法
 
-```jsx
+```js
 /**
  * @file MotionBasic.jsx
  * @description Framer Motion 基础动画。
@@ -46,7 +46,7 @@ function FadeInBox() {
 
 ### 交互与拖拽
 
-```jsx
+```js
 /**
  * @file MotionDrag.jsx
  * @description Framer Motion 拖拽与交互。
@@ -64,7 +64,7 @@ function DraggableBox() {
 
 ### 路由与布局动画
 
-```jsx
+```js
 /**
  * @file MotionLayout.jsx
  * @description Framer Motion 布局动画。
@@ -90,7 +90,7 @@ function List({ items }) {
 
 React Spring 是物理驱动的动画库，适合复杂交互和弹性动画。
 
-```jsx
+```js
 /**
  * @file SpringBasic.jsx
  * @description React Spring 基础用法。
@@ -99,7 +99,6 @@ import { useSpring, animated } from '@react-spring/web';
 
 function SpringBox() {
   const styles = useSpring({ opacity: 1, from: { opacity: 0 } });
-  return <animated.div style={styles}>弹性动画</animated.div>;
 }
 ```
 
@@ -109,7 +108,7 @@ function SpringBox() {
 
 React Transition Group 适合简单的进入/离开动画。
 
-```jsx
+```js
 /**
  * @file TransitionGroupBasic.jsx
  * @description React Transition Group 用法。
@@ -143,9 +142,9 @@ function FadeList({ items }) {
 
 ## React Helmet 基础与进阶（SEO 头部管理）
 
-React Helmet 用于动态管理页面 <head> 内容，提升 SEO。
+React Helmet 用于动态管理页面 head 内容，提升 SEO。
 
-```jsx
+```js
 /**
  * @file HelmetBasic.jsx
  * @description React Helmet 基础用法。
@@ -154,14 +153,14 @@ import { Helmet } from 'react-helmet';
 
 function SEOPage() {
   return (
-    <>
+    <React.Fragment>
       <Helmet>
         <title>自定义标题 - 我的站点</title>
         <meta name="description" content="页面描述" />
         <meta property="og:title" content="自定义标题" />
       </Helmet>
       <h1>内容</h1>
-    </>
+    </React.Fragment>
   );
 }
 ```
@@ -171,10 +170,10 @@ function SEOPage() {
 ## Next.js/SSR 与 SEO 进阶
 
 - Next.js 支持服务端渲染（SSR），天然利于 SEO
-- 使用 next/head 管理 <head> 内容
+- 使用 next/head 管理 head 内容
 - SSR 可提升首屏速度与爬虫可见性
 
-```jsx
+```js
 /**
  * @file NextHeadBasic.jsx
  * @description Next.js SEO 头部管理。
@@ -183,13 +182,13 @@ import Head from 'next/head';
 
 function Page() {
   return (
-    <>
+    <React.Fragment>
       <Head>
         <title>Next.js SEO 页面</title>
         <meta name="description" content="Next.js SEO 示例" />
       </Head>
       <h1>内容</h1>
-    </>
+    </React.Fragment>
   );
 }
 ```
@@ -202,7 +201,7 @@ function Page() {
 - 优化动画属性，减少重排，使用 transform/opacity
 
 ### 2. SEO 不生效
-- 检查 <head> 是否正确渲染，SSR 是否开启
+- 检查 head 是否正确渲染，SSR 是否开启
 
 ### 3. 动画与路由切换冲突
 - 使用 AnimatePresence 管理路由动画
