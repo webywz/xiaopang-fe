@@ -704,7 +704,7 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/xiaopang-fe' }
+      { icon: 'github', link: 'https://github.com/webywz/xiaopang-fe' }
     ],
     
     footer: {
