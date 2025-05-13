@@ -4,6 +4,113 @@ title: 环境搭建
 
 # Python 环境搭建
 
+## 1.1 安装 Python
+
+### 1.1.1 官方安装包
+- 访问 [Python 官网](https://www.python.org/downloads/) 下载对应操作系统的安装包。
+- Windows 用户建议勾选"Add Python to PATH"。
+- macOS 可直接下载安装包或使用 Homebrew。
+- Linux 可通过包管理器（如 apt、yum）安装。
+
+### 1.1.2 Anaconda 发行版
+- 适合数据科学、科学计算用户。
+- 集成大量常用库和包管理工具（conda）。
+- [Anaconda 官网](https://www.anaconda.com/products/individual)
+
+### 1.1.3 源码安装
+- 适合有特殊需求或服务器环境。
+- 下载源码包，解压后：
+  ```bash
+  ./configure
+  make
+  sudo make install
+  ```
+
+## 1.2 版本管理
+
+### 1.2.1 多版本共存
+- Windows 可通过安装不同目录实现。
+- 推荐使用 pyenv（Linux/macOS）或 pyenv-win（Windows）进行多版本管理。
+- pyenv 安装示例：
+  ```bash
+  # macOS/Linux
+  curl https://pyenv.run | bash
+  pyenv install 3.11.0
+  pyenv global 3.11.0
+  ```
+
+### 1.2.2 检查 Python 版本
+```bash
+python --version
+python3 --version
+```
+
+## 1.3 虚拟环境管理
+
+### 1.3.1 venv（标准库自带）
+- 创建虚拟环境：
+  ```bash
+  python -m venv venv_name
+  ```
+- 激活虚拟环境：
+  - Windows: `venv_name\Scripts\activate`
+  - macOS/Linux: `source venv_name/bin/activate`
+- 退出虚拟环境：`deactivate`
+
+### 1.3.2 virtualenv
+- 支持更多 Python 版本，兼容性好。
+- 安装：`pip install virtualenv`
+- 用法同 venv。
+
+### 1.3.3 conda 环境
+- 适合 Anaconda 用户。
+- 创建环境：`conda create -n env_name python=3.11`
+- 激活环境：`conda activate env_name`
+
+## 1.4 包管理工具
+
+### 1.4.1 pip
+- Python 官方推荐包管理工具。
+- 常用命令：
+  ```bash
+  pip install 包名
+  pip uninstall 包名
+  pip list
+  pip freeze > requirements.txt
+  pip install -r requirements.txt
+  ```
+
+### 1.4.2 conda
+- 适合科学计算、数据分析。
+- 支持包和环境统一管理。
+
+## 1.5 常见问题与解决
+
+### 1.5.1 pip 安装慢/失败
+- 更换国内镜像源（如清华、阿里）：
+  ```bash
+  pip install -i https://pypi.tuna.tsinghua.edu.cn/simple 包名
+  ```
+
+### 1.5.2 PATH 配置问题
+- 检查 python、pip 是否在环境变量中。
+- Windows 可用"系统属性-环境变量"配置。
+
+### 1.5.3 版本冲突
+- 推荐每个项目使用独立虚拟环境。
+
+## 1.6 工具推荐
+- VSCode/PyCharm（主流 Python IDE）
+- Jupyter Notebook（交互式开发）
+- Git（版本控制）
+- PowerShell/Terminal（命令行工具）
+
+## 1.7 相关资源
+- [Python 官方下载](https://www.python.org/downloads/)
+- [Anaconda 下载](https://www.anaconda.com/products/individual)
+- [pyenv 文档](https://github.com/pyenv/pyenv)
+- [清华 PyPI 镜像](https://mirrors.tuna.tsinghua.edu.cn/help/pypi/)
+
 ## 目录
 - 多平台安装
 - 配置环境变量

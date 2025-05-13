@@ -2,6 +2,176 @@
 title: Web开发
 ---
 
+# Python Web开发详解
+
+## 1.1 主题简介
+Python 在 Web 开发领域有着广泛应用，支持从轻量级 API 到大型网站的全栈开发。
+
+---
+
+## 1.2 Web 基础原理
+- HTTP 协议、请求与响应、状态码、Cookie/Session、RESTful API。
+- WSGI（Web Server Gateway Interface）：Python Web 应用与服务器的标准接口。
+
+---
+
+## 1.3 主流 Web 框架
+### 1.3.1 Flask —— 轻量级 Web 框架
+```python
+from flask import Flask, request, render_template
+app = Flask(__name__)
+@app.route('/')
+def index():
+    return 'Hello, Flask!'
+# app.run()
+```
+- 支持路由、模板、表单、会话、扩展丰富。
+
+### 1.3.2 Django —— 全功能 Web 框架
+- 内置 ORM、后台管理、认证、模板、路由、表单等。
+```python
+# 创建项目：django-admin startproject mysite
+# 启动服务：python manage.py runserver
+```
+
+### 1.3.3 FastAPI —— 高性能异步 Web 框架
+- 支持异步、自动文档、类型注解。
+```python
+from fastapi import FastAPI
+app = FastAPI()
+@app.get('/')
+def read_root():
+    return {'msg': 'Hello, FastAPI!'}
+# uvicorn main:app --reload
+```
+
+---
+
+## 1.4 路由与视图
+- 路由：URL 到函数的映射。
+- 视图函数：处理请求并返回响应。
+- Flask 示例：
+```python
+@app.route('/user/<name>')
+def user(name):
+    return f'用户：{name}'
+```
+
+---
+
+## 1.5 模板渲染
+- Jinja2（Flask/Django 默认模板引擎）。
+```python
+from flask import render_template
+# templates/hello.html: <h1>Hello, {{ name }}!</h1>
+@app.route('/hello/<name>')
+def hello(name):
+    return render_template('hello.html', name=name)
+```
+
+---
+
+## 1.6 表单与验证
+- Flask-WTF、Django forms。
+```python
+from flask_wtf import FlaskForm
+from wtforms import StringField
+from wtforms.validators import DataRequired
+class MyForm(FlaskForm):
+    name = StringField('Name', validators=[DataRequired()])
+```
+
+---
+
+## 1.7 数据库与 ORM
+- Django ORM、SQLAlchemy（Flask）、Tortoise ORM（FastAPI）。
+```python
+from flask_sqlalchemy import SQLAlchemy
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
+db = SQLAlchemy(app)
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(80))
+```
+
+---
+
+## 1.8 会话与认证
+- Flask session、Django auth、JWT。
+```python
+from flask import session
+session['user_id'] = 123
+```
+
+---
+
+## 1.9 中间件与钩子
+- Flask before_request/after_request，Django middleware。
+```python
+@app.before_request
+def before():
+    print('请求前')
+```
+
+---
+
+## 1.10 API开发与异步Web
+- Flask-RESTful、Django REST framework、FastAPI。
+- FastAPI 支持 async/await。
+```python
+@app.get('/items/{item_id}')
+async def read_item(item_id: int):
+    return {"item_id": item_id}
+```
+
+---
+
+## 1.11 部署与运维
+- 常用部署：Gunicorn+Nginx、uWSGI、Docker、云平台。
+- 静态文件、日志、反向代理、安全加固。
+
+---
+
+## 1.12 常见问题与解决
+- 端口被占用：更换端口或释放进程。
+- 数据库连接失败：检查配置和权限。
+- 跨域问题：使用 CORS 中间件。
+- 模板找不到：确认模板路径和文件名。
+
+## 1.13 最佳实践
+- 路由、视图、模型分层组织。
+- 配置分离，敏感信息用环境变量。
+- 日志、异常、认证等统一处理。
+- 推荐用虚拟环境和 requirements.txt 管理依赖。
+
+## 1.14 JSDoc 注释示例
+```python
+# @param name {str} 用户名
+# @returns {str} 欢迎语
+
+def greet(name):
+    """
+    返回欢迎语
+    :param name: 用户名
+    :type name: str
+    :return: 欢迎语
+    :rtype: str
+    """
+    return f'欢迎, {name}!'
+```
+
+## 1.15 相关资源
+- [Flask 官方文档](https://flask.palletsprojects.com/zh/)
+- [Django 官方文档](https://docs.djangoproject.com/zh-hans/)
+- [FastAPI 官方文档](https://fastapi.tiangolo.com/zh/)
+- [廖雪峰 Flask 教程](https://www.liaoxuefeng.com/wiki/1016959663602400/1017785454945888)
+
+---
+
+> Web开发是 Python 的重要应用场景，建议多实践、多查官方文档。
+
+---
+
 # Python Web开发
 
 ## 目录

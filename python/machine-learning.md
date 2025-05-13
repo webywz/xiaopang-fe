@@ -2,131 +2,180 @@
 title: 机器学习
 ---
 
-# Python 机器学习
+# Python 机器学习详解
 
-## 目录
-- 机器学习基础流程
-- scikit-learn 入门与进阶
-- TensorFlow 简介
-- PyTorch 简介
-- 数据预处理与特征工程
-- 模型训练与评估
-- 超参数调优
-- 常见机器学习案例
-- 常见坑与最佳实践
-- FAQ
-- 扩展阅读
+## 1.1 主题简介
+Python 是机器学习领域的主流语言，拥有丰富的算法库和工具，支持从数据预处理到模型部署的全流程。
 
-## 机器学习基础流程
-1. 明确任务（分类、回归、聚类等）
-2. 数据采集与探索
-3. 数据预处理与特征工程
-4. 模型选择与训练
-5. 模型评估与调优
-6. 结果解释与上线
+---
 
-## scikit-learn 入门与进阶
-- 经典机器学习库，API 统一，适合入门与原型开发
+## 1.2 机器学习基础
+- 机器学习类型：监督学习（分类、回归）、无监督学习（聚类、降维）、强化学习。
+- 典型流程：数据准备 → 特征工程 → 模型选择 → 训练 → 评估 → 调优 → 部署。
+
+---
+
+## 1.3 常用机器学习库
+### 1.3.1 scikit-learn —— 经典机器学习
 ```python
-from sklearn.linear_model import LinearRegression
+from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_squared_error
-X = [[1], [2], [3], [4]]
-y = [1, 2, 3, 4]
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25)
-model = LinearRegression()
-model.fit(X_train, y_train)
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
+X, y = load_iris(return_X_y=True)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+model = RandomForestClassifier().fit(X_train, y_train)
 pred = model.predict(X_test)
-print(mean_squared_error(y_test, pred))
+print('准确率:', accuracy_score(y_test, pred))
 ```
-- 常用模块：model_selection, preprocessing, metrics, ensemble, svm, tree, pipeline
-
-## TensorFlow 简介
-- Google 推出的深度学习框架，支持自动微分、动态图、分布式训练
+### 1.3.2 tensorflow —— 深度学习
 ```python
 import tensorflow as tf
 x = tf.constant([[1.0, 2.0]])
-print(tf.reduce_sum(x))
+layer = tf.keras.layers.Dense(1)
+print(layer(x))
 ```
-- 适合大规模神经网络、生产部署
-
-## PyTorch 简介
-- Facebook 推出的深度学习框架，动态图、易于调试
+### 1.3.3 pytorch —— 深度学习
 ```python
 import torch
+import torch.nn as nn
 x = torch.tensor([[1.0, 2.0]])
-print(torch.sum(x))
+layer = nn.Linear(2, 1)
+print(layer(x))
 ```
-- 适合学术研究、原型开发
-
-## 数据预处理与特征工程
-- 标准化、归一化、缺失值处理、编码、特征选择、降维
+### 1.3.4 xgboost —— 集成学习
 ```python
-from sklearn.preprocessing import StandardScaler
-scaler = StandardScaler()
-X_scaled = scaler.fit_transform(X)
+import xgboost as xgb
+dtrain = xgb.DMatrix([[1,2],[3,4]], label=[0,1])
+params = {'objective':'binary:logistic'}
+model = xgb.train(params, dtrain, num_boost_round=2)
 ```
 
-## 模型训练与评估
-- 训练集/测试集划分、交叉验证、评估指标（准确率、召回率、F1、AUC、MSE等）
-- 支持管道（pipeline）自动化流程
+---
 
-## 超参数调优
-- 网格搜索、随机搜索、贝叶斯优化
+## 1.4 数据预处理与特征工程
+### 1.4.1 缺失值与异常值处理
+```python
+from sklearn.impute import SimpleImputer
+imp = SimpleImputer(strategy='mean')
+X_new = imp.fit_transform(X)
+```
+### 1.4.2 特征缩放与归一化
+```python
+from sklearn.preprocessing import StandardScaler, MinMaxScaler
+X_std = StandardScaler().fit_transform(X)
+X_minmax = MinMaxScaler().fit_transform(X)
+```
+### 1.4.3 特征选择
+```python
+from sklearn.feature_selection import SelectKBest, f_classif
+X_new = SelectKBest(f_classif, k=2).fit_transform(X, y)
+```
+
+---
+
+## 1.5 模型训练与评估
+### 1.5.1 分类
+```python
+from sklearn.linear_model import LogisticRegression
+model = LogisticRegression().fit(X_train, y_train)
+print(model.score(X_test, y_test))
+```
+### 1.5.2 回归
+```python
+from sklearn.linear_model import LinearRegression
+model = LinearRegression().fit(X_train, y_train)
+print(model.score(X_test, y_test))
+```
+### 1.5.3 聚类
+```python
+from sklearn.cluster import KMeans
+kmeans = KMeans(n_clusters=3).fit(X)
+print(kmeans.labels_)
+```
+### 1.5.4 降维
+```python
+from sklearn.decomposition import PCA
+X_pca = PCA(n_components=2).fit_transform(X)
+```
+### 1.5.5 交叉验证
+```python
+from sklearn.model_selection import cross_val_score
+scores = cross_val_score(model, X, y, cv=5)
+print(scores.mean())
+```
+### 1.5.6 模型调优
 ```python
 from sklearn.model_selection import GridSearchCV
-params = {'fit_intercept': [True, False]}
-gs = GridSearchCV(LinearRegression(), params, cv=3)
+params = {'n_estimators':[10,50]}
+gs = GridSearchCV(RandomForestClassifier(), params, cv=3)
 gs.fit(X, y)
 print(gs.best_params_)
 ```
 
-## 常见机器学习案例
-- 房价预测、手写数字识别、文本分类、图片识别、异常检测
+---
 
-## 常见坑与最佳实践
-- 数据泄漏：训练集/测试集混用
-- 特征分布不一致、类别不均衡
-- 过拟合/欠拟合：需正则化、交叉验证
-- 建议用 pipeline 串联预处理与建模
-- 深度学习建议用 GPU
-- 建议用虚拟环境隔离依赖
-
-## FAQ
-- Q: scikit-learn 支持深度学习吗？
-  A: 不支持，推荐用 TensorFlow/PyTorch
-- Q: 如何保存/加载模型？
-  A: `joblib.dump(model, 'm.pkl')`，`joblib.load('m.pkl')`
-- Q: 如何处理类别特征？
-  A: 用 `OneHotEncoder` 或 `LabelEncoder`
-
-## JSDoc 注释示例
+## 1.6 模型保存与部署
 ```python
-# @param X {array} 特征数据
+import joblib
+joblib.dump(model, 'model.pkl')
+model2 = joblib.load('model.pkl')
+```
+- TensorFlow/PyTorch 支持 SavedModel、TorchScript、ONNX 等格式。
+
+---
+
+## 1.7 案例实战
+### 1.7.1 鸢尾花分类
+- 用 scikit-learn 加载数据，训练模型，评估准确率。
+### 1.7.2 房价预测
+- 用线性回归/树模型预测房价。
+### 1.7.3 图像识别
+- 用 TensorFlow/PyTorch 构建简单神经网络。
+
+---
+
+## 1.8 常见问题与解决
+- 过拟合：增加数据、正则化、交叉验证。
+- 数据不平衡：采样、加权、评价指标调整。
+- 训练慢：特征降维、用 GPU。
+- 依赖冲突：用虚拟环境隔离。
+
+## 1.9 最佳实践
+- 数据清洗和特征工程优先。
+- 多用交叉验证和网格搜索。
+- 关注模型可解释性和泛化能力。
+- 代码结构清晰，便于复现和部署。
+
+## 1.10 JSDoc 注释示例
+```python
+# @param X {array} 特征矩阵
 # @param y {array} 标签
 # @returns {object} 训练好的模型
 
-def train_model(X, y):
+def train_rf(X, y):
     """
-    训练线性回归模型
-    :param X: 特征数据
+    训练随机森林分类器
+    :param X: 特征矩阵
     :type X: array
     :param y: 标签
     :type y: array
     :return: 训练好的模型
-    :rtype: object
+    :rtype: RandomForestClassifier
     """
-    from sklearn.linear_model import LinearRegression
-    model = LinearRegression()
-    model.fit(X, y)
-    return model
+    from sklearn.ensemble import RandomForestClassifier
+    return RandomForestClassifier().fit(X, y)
 ```
 
-## 扩展阅读
-- [scikit-learn 官方文档](https://scikit-learn.org/stable/)
+## 1.11 相关资源
+- [scikit-learn 官方文档](https://scikit-learn.org.cn/)
 - [TensorFlow 官方文档](https://tensorflow.google.cn/)
 - [PyTorch 官方文档](https://pytorch.org/docs/stable/index.html)
-- [Kaggle 机器学习竞赛](https://www.kaggle.com/)
+- [Kaggle 机器学习实战](https://www.kaggle.com/)
+
+---
+
+> 机器学习重在实践，建议多用真实数据、多做实验、多查官方文档。
 
 ---
 

@@ -4,109 +4,166 @@ title: 数据结构
 
 # Python 数据结构
 
-## 目录
-- 列表（List）
-- 元组（Tuple）
-- 字典（Dict）
-- 集合（Set）
-- 数据结构性能对比
-- 常见坑与最佳实践
-- FAQ
-- 扩展阅读
+## 1.1 主题简介
+Python 提供了丰富且高效的数据结构，包括列表、元组、字典、集合和字符串，是编程和数据处理的基础。
 
-## 列表（List）
-- 有序可变，支持增删改查，元素可重复
-- 常用操作：append、extend、insert、pop、remove、sort、reverse、切片
-
+## 1.2 列表（List）
+### 1.2.1 定义与基本操作
 ```python
-fruits = ['苹果', '香蕉', '橙子']
-fruits.append('葡萄')
-fruits[1] = '梨'
-print(fruits[0:2])  # 切片
-fruits.remove('梨')
-fruits.sort()
+lst = [1, 2, 3, 'a', True]
+```
+- 支持任意类型混合，支持嵌套。
+- 索引从 0 开始，支持负索引。
+
+### 1.2.2 常用方法
+```python
+lst.append(4)      # 末尾添加
+lst.insert(1, 'b') # 指定位置插入
+lst.pop()          # 删除末尾元素
+lst.remove(2)      # 删除指定值
+lst.sort()         # 排序（原地）
+lst.reverse()      # 反转
+lst.count(1)       # 统计出现次数
+lst.index('a')     # 查找索引
 ```
 
-## 元组（Tuple）
-- 有序不可变，元素可重复，适合存储只读数据
-- 支持嵌套、解包、count、index
-
+### 1.2.3 切片与遍历
 ```python
-point = (1, 2)
-x, y = point  # 解包
-t = (1, 2, 3, 2)
-print(t.count(2), t.index(3))
+print(lst[1:3])
+for item in lst:
+    print(item)
 ```
 
-## 字典（Dict）
-- 键值对，无序（3.7+为插入有序），键唯一
-- 常用操作：get、setdefault、update、pop、keys、values、items、字典推导式
-
+## 1.3 元组（Tuple）
+### 1.3.1 定义与特性
 ```python
-person = {'name': '小胖', 'age': 18}
-print(person.get('name'))
-person['age'] = 20
-for k, v in person.items():
+tpl = (1, 2, 3)
+```
+- 不可变序列，适合存储只读数据。
+- 单元素元组需加逗号：`(1,)`
+
+### 1.3.2 解包与遍历
+```python
+a, b, c = tpl
+for x in tpl:
+    print(x)
+```
+
+## 1.4 字典（Dict）
+### 1.4.1 定义与基本操作
+```python
+d = {'name': '小胖', 'age': 18}
+```
+- 键必须唯一且可哈希，值任意类型。
+
+### 1.4.2 常用方法
+```python
+d['gender'] = '男'      # 新增/修改
+v = d.get('score', 0)   # 安全获取
+for k, v in d.items():
     print(k, v)
-# 字典推导式
-d = {i: i*i for i in range(5)}
+d.pop('age')            # 删除键
+list(d.keys())          # 所有键
+list(d.values())        # 所有值
+list(d.items())         # 所有键值对
 ```
 
-## 集合（Set）
-- 无序不重复，支持集合运算（交、并、差、对称差）
-- 常用操作：add、remove、update、union、intersection、difference、symmetric_difference
-
+## 1.5 集合（Set）
+### 1.5.1 定义与特性
 ```python
-nums = {1, 2, 3, 2}
-nums.add(4)
-nums.remove(1)
-print(nums | {5, 6})  # 并集
-print(nums & {2, 3})  # 交集
+s = {1, 2, 3, 2}
+```
+- 元素唯一、无序。
+- 可用于去重、集合运算。
+
+### 1.5.2 常用操作
+```python
+s.add(4)
+s.remove(2)
+s1 = {1, 2, 3}
+s2 = {3, 4, 5}
+print(s1 | s2)  # 并集
+print(s1 & s2)  # 交集
+print(s1 - s2)  # 差集
+print(s1 ^ s2)  # 对称差集
 ```
 
-## 数据结构性能对比
-| 操作         | list   | tuple  | dict   | set    |
-| ------------ | ------ | ------ | ------ | ------ |
-| 查找         | O(n)   | O(n)   | O(1)   | O(1)   |
-| 插入/删除    | O(n)   | 不支持 | O(1)   | O(1)   |
-| 是否可变     | 可变   | 不可变 | 可变   | 可变   |
-
-## 常见坑与最佳实践
-- 列表/字典的浅拷贝与深拷贝：`copy`、`deepcopy`
-- 字典键必须可哈希（如 list 不能做 key）
-- 集合去重不保证顺序
-- 推荐用推导式简化代码
-- 遍历字典推荐用 items()
-
-## FAQ
-- Q: 如何快速去重并保持顺序？
-  A: `list(dict.fromkeys(lst))`
-- Q: 元组能否包含可变对象？
-  A: 可以，但元组本身不可变
-- Q: 字典如何合并？
-  A: Python 3.5+ 可用 `{**d1, **d2}`，3.9+ 可用 `d1 | d2`
-
-## JSDoc 注释示例
+## 1.6 字符串（String）
+### 1.6.1 定义与不可变性
 ```python
-# @param items {list} 输入列表
+s = 'hello world'
+```
+- 字符串不可变，支持切片、遍历。
+
+### 1.6.2 常用方法
+```python
+s.upper()
+s.lower()
+s.title()
+s.split(' ')
+s.replace('l', 'L')
+s.find('o')
+s.count('l')
+'abc'.join(['1', '2', '3'])
+```
+
+## 1.7 性能对比与选择
+- 列表适合频繁增删改查。
+- 元组适合只读、不可变数据。
+- 字典适合映射关系、查找快。
+- 集合适合去重、集合运算。
+
+## 1.8 典型案例
+### 1.8.1 列表去重
+```python
+lst = [1, 2, 2, 3]
+lst2 = list(set(lst))
+```
+### 1.8.2 字典统计词频
+```python
+text = 'hello world hello'
+d = {}
+for word in text.split():
+    d[word] = d.get(word, 0) + 1
+```
+### 1.8.3 集合交集
+```python
+s1 = {1, 2, 3}
+s2 = {2, 3, 4}
+print(s1 & s2)
+```
+
+## 1.9 常见问题与解决
+- 列表和字典的浅拷贝与深拷贝：用 copy.deepcopy 处理嵌套结构。
+- 字典键不可变，否则报错。
+- 集合不能包含可变对象（如列表）。
+
+## 1.10 最佳实践
+- 优先用字典存储映射关系。
+- 只读数据用元组，避免误改。
+- 字符串拼接推荐用 join。
+- 遍历字典用 items()。
+
+## 1.11 JSDoc 注释示例
+```python
+# @param lst {list} 输入列表
 # @returns {list} 去重后的新列表
 
-def deduplicate(items):
+def dedup(lst):
     """
     列表去重
-    :param items: 输入列表
-    :type items: list
+    :param lst: 输入列表
+    :type lst: list
     :return: 去重后的新列表
     :rtype: list
     """
-    return list(set(items))
+    return list(set(lst))
 ```
 
-## 扩展阅读
+## 1.12 相关资源
 - [官方数据结构文档](https://docs.python.org/zh-cn/3/tutorial/datastructures.html)
-- [collections 模块](https://docs.python.org/zh-cn/3/library/collections.html)
-- [深拷贝与浅拷贝](https://docs.python.org/zh-cn/3/library/copy.html)
+- [廖雪峰 Python 教程-数据结构](https://www.liaoxuefeng.com/wiki/1016959663602400/1017329962603680)
 
 ---
 
-> 熟练掌握数据结构是高效编程的基础，建议多用推导式和内置方法。 
+> 掌握数据结构是高效编程的基础，建议多练习、多比较。 

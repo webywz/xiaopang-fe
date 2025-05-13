@@ -192,7 +192,7 @@ export default defineConfig({
       {
         text: 'Python',
         items: [
-          { text: 'Python简介', link: '/python/' },
+          { text: 'Python简介', link: '/python/python/' },
           { text: '环境搭建', link: '/python/setup' },
           { text: '基础语法', link: '/python/basics' },
           { text: '数据结构', link: '/python/data-structures' },
@@ -202,6 +202,7 @@ export default defineConfig({
           { text: 'Web开发', link: '/python/web' },
           { text: '数据分析', link: '/python/data-analysis' },
           { text: '机器学习', link: '/python/machine-learning' },
+          { text: '可视化', link: '/python/visualization' },
           { text: '自动化脚本', link: '/python/automation' },
           { text: '爬虫开发', link: '/python/spider' },
           { text: '实战项目', link: '/python/projects' }
@@ -850,8 +851,9 @@ export default defineConfig({
             { text: 'Web开发', link: '/python/web' },
             { text: '数据分析', link: '/python/data-analysis' },
             { text: '机器学习', link: '/python/machine-learning' },
-            { text: '爬虫开发', link: '/python/spider' },
-            { text: '自动化脚本', link: '/python/automation' }
+            { text: '可视化', link: '/python/visualization' },
+            { text: '自动化脚本', link: '/python/automation' },
+            { text: '爬虫开发', link: '/python/spider' }
           ]
         },
         {

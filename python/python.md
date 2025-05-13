@@ -2,64 +2,71 @@
 title: Python简介
 ---
 
-# Python简介
+# Python 简介
 
-## 目录
-- 语言简介
-- 发展历史
-- 设计哲学与核心思想
-- 主流应用领域
-- 生态系统与社区
-- 学习路径建议
-- 常见误区与陷阱
-- 扩展阅读
+## 1.1 什么是 Python？
 
-## 语言简介
-Python 是一种高级、通用、解释型编程语言，以简洁、优雅、易读著称。其语法接近自然语言，极大降低了编程门槛，广泛应用于 Web 开发、数据分析、人工智能、自动化运维等领域。
+Python 是一种高级、通用、解释型编程语言，具有简洁易读的语法和强大的生态系统。它广泛应用于 Web 开发、数据分析、人工智能、自动化运维、科学计算等领域。
 
-## 发展历史
-- 1989 年，Guido van Rossum 在圣诞节期间开始设计 Python。
-- 1991 年，Python 0.9.0 发布，支持异常处理、函数、模块等。
-- 2000 年，Python 2.0 发布，引入垃圾回收、Unicode 支持。
-- 2008 年，Python 3.0 发布，语法和标准库大幅升级，现已成为主流。
+- 设计哲学：强调代码的可读性和简洁性（"优雅"、"明确"、"简单"）。
+- 解释型语言：无需编译，直接运行。
+- 跨平台：支持 Windows、Linux、macOS 等主流操作系统。
 
-## 设计哲学与核心思想
-- 强调"优雅"、"明确"、"简单"
-- 采用缩进而非大括号，提升代码可读性
-- "There should be one-- and preferably only one --obvious way to do it."
-- 可通过 `import this` 查看 Python 之禅
+## 1.2 Python 的发展历史
 
-## 主流应用领域
-- Web 后端开发（Django、Flask、FastAPI）
+- 1989 年，Guido van Rossum 开始设计 Python。
+- 1991 年，Python 0.9.0 发布。
+- 2000 年，Python 2.0 发布，加入垃圾回收、Unicode 支持。
+- 2008 年，Python 3.0 发布，语法和标准库大幅升级。
+- 2020 年，Python 2 官方停止维护。
+
+## 1.3 Python 的主要特点
+
+- 简单易学，语法清晰
+- 丰富的标准库和第三方库
+- 跨平台兼容性好
+- 支持多种编程范式（面向对象、函数式、过程式）
+- 社区活跃，文档丰富
+
+## 1.4 Python 的应用领域
+
+- Web 开发（Django、Flask）
 - 数据分析与科学计算（Pandas、NumPy、SciPy）
 - 人工智能与机器学习（TensorFlow、PyTorch、scikit-learn）
-- 自动化脚本与运维（Ansible、Fabric、自动化办公）
-- 网络爬虫（requests、BeautifulSoup、Scrapy）
-- 桌面/GUI 应用、游戏开发、嵌入式开发等
+- 自动化脚本与运维（Ansible、SaltStack）
+- 网络爬虫（Scrapy、Requests）
+- 桌面应用开发（PyQt、Tkinter）
+- 游戏开发（Pygame）
 
-## 生态系统与社区
-- PyPI 拥有 40 万+ 第三方包
-- 官方文档、Stack Overflow、知乎、CSDN 等社区活跃
-- 每年有 PyCon、DjangoCon 等大型会议
+## 1.5 Python 版本选择
 
-## 学习路径建议
-1. 掌握基础语法、数据结构、函数、面向对象
-2. 熟悉标准库与常用第三方库
-3. 结合实际项目练习，如爬虫、数据分析、Web 应用
-4. 深入学习进阶主题：并发、异步、类型注解、测试、部署等
-5. 关注官方文档和社区动态
+- 推荐使用 Python 3.x，Python 2.x 已停止维护。
+- 常见发行版：官方 CPython、Anaconda（数据科学）、PyPy（高性能）。
 
-## 常见误区与陷阱
-- Python 2 与 3 语法不兼容，建议只学 Python 3
-- 动态类型易导致运行时错误，建议多写测试
-- 缩进错误常见，建议用主流编辑器
-- 过度依赖全局变量、魔法方法等
+## 1.6 Python 生态与社区
 
-## 扩展阅读
-- [官方文档](https://docs.python.org/zh-cn/3/)
-- [PEP8 编码规范](https://peps.python.org/pep-0008/)
-- [Python之禅](https://python.swaroopch.com/zh/zen.html)
-- [PyPI](https://pypi.org/)
+- 官方网站：[https://www.python.org/](https://www.python.org/)
+- 中文社区：[https://www.pythondoc.com/](https://www.pythondoc.com/)
+- 常用包管理工具：pip、conda
+- 代码托管平台：GitHub、Gitee
+
+## 1.7 常见问题解答
+
+### Q1：Python 适合初学者吗？
+A：非常适合，语法简单，社区资源丰富。
+
+### Q2：Python 运行速度慢吗？
+A：相较于 C/C++，Python 运行速度较慢，但开发效率高。可通过 Cython、PyPy、Numba 等工具优化性能。
+
+### Q3：如何选择 Python 2 还是 3？
+A：新项目务必选择 Python 3，2.x 已停止维护。
+
+## 1.8 相关资源推荐
+
+- [Python 官方文档](https://docs.python.org/zh-cn/3/)
+- [廖雪峰 Python 教程](https://www.liaoxuefeng.com/wiki/1016959663602400)
+- [菜鸟教程 Python](https://www.runoob.com/python3/python3-tutorial.html)
+- [Real Python](https://realpython.com/)
 
 ---
 
