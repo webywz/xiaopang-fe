@@ -25,6 +25,11 @@ import { createHtmlSpecialTagsFix } from './html-special-tags-fix'
  * @type {import('vitepress').DefaultTheme.Sidebar}
  */
 
+/**
+ * Solidity 开发侧边栏配置
+ * @type {import('vitepress').DefaultTheme.Sidebar}
+ */
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "小胖",
@@ -162,6 +167,20 @@ export default defineConfig({
           { text: '钱包与签名', link: '/web3/wallet' },
           { text: 'DApp开发', link: '/web3/dapp' },
           { text: '常见工具', link: '/web3/tools' }
+        ]
+      },
+      {
+        text: 'Solidity开发',
+        items: [
+          { text: 'Solidity简介', link: '/solidity/' },
+          { text: '基础语法', link: '/solidity/basics' },
+          { text: '合约开发', link: '/solidity/contract-development' },
+          { text: '常用工具链', link: '/solidity/tooling' },
+          { text: '测试与调试', link: '/solidity/testing' },
+          { text: '安全与漏洞', link: '/solidity/security' },
+          { text: '性能与优化', link: '/solidity/optimization' },
+          { text: '主流开发框架', link: '/solidity/frameworks' },
+          { text: '实战项目', link: '/solidity/projects' }
         ]
       },
     ],
@@ -718,6 +737,69 @@ export default defineConfig({
             { text: '测试与调试', link: '/basic/nodejs/testing-debugging' },
             { text: 'Node.js 性能优化', link: '/basic/nodejs/performance' },
             { text: 'Node.js 实战项目', link: '/basic/nodejs/projects' }
+          ]
+        }
+      ],
+      '/solidity/': [
+        {
+          text: 'Solidity开发全系列',
+          collapsed: false,
+          items: [
+            {
+              text: 'Solidity基础',
+              collapsed: false,
+              items: [
+                { text: 'Solidity简介', link: '/solidity/' },
+                { text: '基础语法', link: '/solidity/basics' },
+                { text: '数据类型与变量', link: '/solidity/data-types' },
+                { text: '函数与修饰符', link: '/solidity/functions-modifiers' },
+                { text: '控制结构', link: '/solidity/control-structures' },
+                { text: '事件与日志', link: '/solidity/events-logs' },
+                { text: '错误处理', link: '/solidity/error-handling' }
+              ]
+            },
+            {
+              text: '合约开发进阶',
+              collapsed: false,
+              items: [
+                { text: '合约结构与继承', link: '/solidity/contract-structure' },
+                { text: '接口与库', link: '/solidity/interfaces-libraries' },
+                { text: '合约部署与升级', link: '/solidity/deployment-upgrade' },
+                { text: '与以太坊交互', link: '/solidity/ethereum-interaction' },
+                { text: '常见设计模式', link: '/solidity/design-patterns' }
+              ]
+            },
+            {
+              text: '工具链与测试',
+              collapsed: false,
+              items: [
+                { text: '开发环境与工具链', link: '/solidity/tooling' },
+                { text: '主流开发框架', link: '/solidity/frameworks' },
+                { text: '合约测试与调试', link: '/solidity/testing' },
+                { text: '自动化部署', link: '/solidity/automation' }
+              ]
+            },
+            {
+              text: '安全与优化',
+              collapsed: false,
+              items: [
+                { text: '常见安全漏洞', link: '/solidity/security' },
+                { text: '安全开发最佳实践', link: '/solidity/security-best-practices' },
+                { text: '合约审计流程', link: '/solidity/audit' },
+                { text: '性能优化技巧', link: '/solidity/optimization' }
+              ]
+            },
+            {
+              text: '实战项目',
+              collapsed: false,
+              items: [
+                { text: '代币合约开发', link: '/solidity/projects/token' },
+                { text: 'NFT合约开发', link: '/solidity/projects/nft' },
+                { text: 'DAO与治理合约', link: '/solidity/projects/dao' },
+                { text: 'DeFi合约实战', link: '/solidity/projects/defi' },
+                { text: '综合实战案例', link: '/solidity/projects/cases' }
+              ]
+            }
           ]
         }
       ],
