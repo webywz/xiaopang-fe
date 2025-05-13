@@ -84,6 +84,7 @@ export default defineConfig({
           { text: 'Vue', link: '/vue/' },
           { text: 'React', link: '/react/' },
           { text: 'TypeScript', link: '/typescript/' },
+          { text: 'uniapp', link: '/uniapp/uniapp-pitfalls/' },
         ]
       },
       { 
