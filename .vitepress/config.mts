@@ -220,29 +220,165 @@ export default defineConfig({
       },
       {
         /**
-         * SQL 相关导航配置
-         * @description 为 VitePress 文档新增 SQL 相关的导航入口
+         * SQL 相关导航配置（超级详细版）
+         * @description 覆盖所有主流 SQL 数据库，细分基础、进阶、性能、安全、工具、设计模式等
          */
         text: 'SQL',
         items: [
-          { text: 'SQL 基础', link: '/sql/' },
-          { text: 'SQL 进阶', link: '/sql/advanced' },
-          { text: '性能优化', link: '/sql/performance' },
-          { text: '数据库实战', link: '/sql/projects/mysql' }
+          { text: 'SQL 标准与历史', link: '/sql/standard' },
+          { text: 'SQL 设计模式', link: '/sql/patterns' },
+          { text: 'SQL 工具与生态', link: '/sql/tools' },
+          {
+            text: 'MySQL',
+            items: [
+              { text: '基础语法', link: '/sql/mysql/basics' },
+              { text: '数据类型', link: '/sql/mysql/types' },
+              { text: '查询与操作', link: '/sql/mysql/query' },
+              { text: '事务与锁', link: '/sql/mysql/transaction' },
+              { text: '视图与索引', link: '/sql/mysql/view-index' },
+              { text: '存储过程与函数', link: '/sql/mysql/procedure' },
+              { text: '性能优化', link: '/sql/mysql/performance' },
+              { text: '安全与权限', link: '/sql/mysql/security' },
+              { text: '备份与恢复', link: '/sql/mysql/backup' },
+              { text: '实战案例', link: '/sql/projects/mysql' },
+              { text: '工具链', link: '/sql/mysql/tools' }
+            ]
+          },
+          {
+            text: 'PostgreSQL',
+            items: [
+              { text: '基础语法', link: '/sql/postgresql/basics' },
+              { text: '数据类型', link: '/sql/postgresql/types' },
+              { text: '查询与操作', link: '/sql/postgresql/query' },
+              { text: '事务与锁', link: '/sql/postgresql/transaction' },
+              { text: '视图与索引', link: '/sql/postgresql/view-index' },
+              { text: '存储过程与函数', link: '/sql/postgresql/procedure' },
+              { text: '性能优化', link: '/sql/postgresql/performance' },
+              { text: '安全与权限', link: '/sql/postgresql/security' },
+              { text: '备份与恢复', link: '/sql/postgresql/backup' },
+              { text: '实战案例', link: '/sql/projects/postgresql' },
+              { text: '工具链', link: '/sql/postgresql/tools' }
+            ]
+          },
+          {
+            text: 'SQLite',
+            items: [
+              { text: '基础语法', link: '/sql/sqlite/basics' },
+              { text: '数据类型', link: '/sql/sqlite/types' },
+              { text: '查询与操作', link: '/sql/sqlite/query' },
+              { text: '事务与锁', link: '/sql/sqlite/transaction' },
+              { text: '视图与索引', link: '/sql/sqlite/view-index' },
+              { text: '存储过程与函数', link: '/sql/sqlite/procedure' },
+              { text: '性能优化', link: '/sql/sqlite/performance' },
+              { text: '安全与权限', link: '/sql/sqlite/security' },
+              { text: '备份与恢复', link: '/sql/sqlite/backup' },
+              { text: '实战案例', link: '/sql/projects/sqlite' },
+              { text: '工具链', link: '/sql/sqlite/tools' }
+            ]
+          },
+          {
+            text: 'Oracle',
+            items: [
+              { text: '基础语法', link: '/sql/oracle/basics' },
+              { text: '数据类型', link: '/sql/oracle/types' },
+              { text: '查询与操作', link: '/sql/oracle/query' },
+              { text: '事务与锁', link: '/sql/oracle/transaction' },
+              { text: '视图与索引', link: '/sql/oracle/view-index' },
+              { text: '存储过程与函数', link: '/sql/oracle/procedure' },
+              { text: '性能优化', link: '/sql/oracle/performance' },
+              { text: '安全与权限', link: '/sql/oracle/security' },
+              { text: '备份与恢复', link: '/sql/oracle/backup' },
+              { text: '实战案例', link: '/sql/projects/oracle' },
+              { text: '工具链', link: '/sql/oracle/tools' }
+            ]
+          },
+          {
+            text: 'SQL Server',
+            items: [
+              { text: '基础语法', link: '/sql/sqlserver/basics' },
+              { text: '数据类型', link: '/sql/sqlserver/types' },
+              { text: '查询与操作', link: '/sql/sqlserver/query' },
+              { text: '事务与锁', link: '/sql/sqlserver/transaction' },
+              { text: '视图与索引', link: '/sql/sqlserver/view-index' },
+              { text: '存储过程与函数', link: '/sql/sqlserver/procedure' },
+              { text: '性能优化', link: '/sql/sqlserver/performance' },
+              { text: '安全与权限', link: '/sql/sqlserver/security' },
+              { text: '备份与恢复', link: '/sql/sqlserver/backup' },
+              { text: '实战案例', link: '/sql/projects/sqlserver' },
+              { text: '工具链', link: '/sql/sqlserver/tools' }
+            ]
+          }
         ]
       },
       {
         /**
-         * AI Agent 相关导航配置
-         * @description 为 VitePress 文档新增 AI Agent 相关的导航入口
+         * AI Agent 相关导航配置（超级详细版）
+         * @description 覆盖主流 AI Agent 框架、能力、Ops、Prompt 工程、应用等
          */
         text: 'AI Agent',
         items: [
-          { text: '基础原理', link: '/ai-agent/' },
-          { text: '主流框架', link: '/ai-agent/frameworks/langchain' },
-          { text: '应用案例', link: '/ai-agent/cases/qa' },
-          { text: 'AgentOps', link: '/ai-agent/agentops' },
-          { text: 'Prompt 工程', link: '/ai-agent/prompt' }
+          { text: 'AI Agent 简介', link: '/ai-agent/' },
+          { text: '核心原理', link: '/ai-agent/principle' },
+          { text: '常用术语', link: '/ai-agent/terms' },
+          {
+            text: '主流框架',
+            items: [
+              { text: 'LangChain', link: '/ai-agent/frameworks/langchain' },
+              { text: 'AutoGen', link: '/ai-agent/frameworks/autogen' },
+              { text: 'CrewAI', link: '/ai-agent/frameworks/crewai' },
+              { text: 'MetaGPT', link: '/ai-agent/frameworks/metagpt' },
+              { text: 'Haystack', link: '/ai-agent/frameworks/haystack' },
+              { text: 'Flowise', link: '/ai-agent/frameworks/flowise' },
+              { text: 'AgentVerse', link: '/ai-agent/frameworks/agentverse' },
+              { text: '其他框架', link: '/ai-agent/frameworks/others' }
+            ]
+          },
+          {
+            text: '能力与组件',
+            items: [
+              { text: '感知与解析', link: '/ai-agent/abilities/perception' },
+              { text: '规划与决策', link: '/ai-agent/abilities/planning' },
+              { text: '行动与执行', link: '/ai-agent/abilities/action' },
+              { text: '自主学习', link: '/ai-agent/abilities/learning' },
+              { text: '多智能体协作', link: '/ai-agent/abilities/multi-agent' },
+              { text: '工具集成', link: '/ai-agent/abilities/tools' },
+              { text: '记忆与知识库', link: '/ai-agent/abilities/memory' },
+              { text: '环境交互', link: '/ai-agent/abilities/environment' }
+            ]
+          },
+          {
+            text: 'AgentOps',
+            items: [
+              { text: 'AgentOps 概述', link: '/ai-agent/agentops' },
+              { text: '监控与评估', link: '/ai-agent/agentops/monitor' },
+              { text: '持续优化', link: '/ai-agent/agentops/optimize' },
+              { text: '安全与合规', link: '/ai-agent/agentops/security' },
+              { text: '部署与运维', link: '/ai-agent/agentops/deploy' }
+            ]
+          },
+          {
+            text: 'Prompt 工程',
+            items: [
+              { text: 'Prompt 设计', link: '/ai-agent/prompt' },
+              { text: '提示词模式', link: '/ai-agent/prompt/patterns' },
+              { text: '实战案例', link: '/ai-agent/prompt/cases' },
+              { text: '多轮对话', link: '/ai-agent/prompt/multi-turn' },
+              { text: '上下文管理', link: '/ai-agent/prompt/context' }
+            ]
+          },
+          {
+            text: '应用案例',
+            items: [
+              { text: '智能问答', link: '/ai-agent/cases/qa' },
+              { text: '自动化办公', link: '/ai-agent/cases/office' },
+              { text: '多智能体协作', link: '/ai-agent/cases/multi-agent' },
+              { text: '自动编程', link: '/ai-agent/cases/code' },
+              { text: '自动化科研', link: '/ai-agent/cases/research' },
+              { text: '智能搜索与推荐', link: '/ai-agent/cases/search' },
+              { text: 'RPA 流程机器人', link: '/ai-agent/cases/rpa' },
+              { text: '其他应用', link: '/ai-agent/cases/others' }
+            ]
+          }
         ]
       },
     ],
@@ -901,48 +1037,104 @@ export default defineConfig({
         }
       ],
       /**
-       * SQL 侧边栏配置
+       * SQL 侧边栏配置（超级详细版）
        * @type {import('vitepress').DefaultTheme.Sidebar}
+       * @description 覆盖所有主流 SQL 数据库，细分基础、进阶、性能、安全、工具、设计模式等
        */
       '/sql/': [
         {
-          text: 'SQL 基础',
+          text: 'SQL 通用',
           items: [
-            { text: 'SQL 简介', link: '/sql/' },
-            { text: '常用语法', link: '/sql/syntax' },
-            { text: '数据类型', link: '/sql/types' },
-            { text: '查询与操作', link: '/sql/query' }
+            { text: 'SQL 标准与历史', link: '/sql/standard' },
+            { text: 'SQL 设计模式', link: '/sql/patterns' },
+            { text: 'SQL 工具与生态', link: '/sql/tools' }
           ]
         },
         {
-          text: 'SQL 进阶',
+          text: 'MySQL',
           items: [
-            { text: '复杂查询', link: '/sql/advanced' },
-            { text: '事务与锁', link: '/sql/transaction' },
-            { text: '视图与索引', link: '/sql/view-index' },
-            { text: '存储过程', link: '/sql/procedure' }
+            { text: '基础语法', link: '/sql/mysql/basics' },
+            { text: '数据类型', link: '/sql/mysql/types' },
+            { text: '查询与操作', link: '/sql/mysql/query' },
+            { text: '事务与锁', link: '/sql/mysql/transaction' },
+            { text: '视图与索引', link: '/sql/mysql/view-index' },
+            { text: '存储过程与函数', link: '/sql/mysql/procedure' },
+            { text: '性能优化', link: '/sql/mysql/performance' },
+            { text: '安全与权限', link: '/sql/mysql/security' },
+            { text: '备份与恢复', link: '/sql/mysql/backup' },
+            { text: '实战案例', link: '/sql/projects/mysql' },
+            { text: '工具链', link: '/sql/mysql/tools' }
           ]
         },
         {
-          text: '性能优化',
+          text: 'PostgreSQL',
           items: [
-            { text: 'SQL 优化技巧', link: '/sql/performance' },
-            { text: '慢查询分析', link: '/sql/slow-query' },
-            { text: '数据库调优', link: '/sql/db-tuning' }
+            { text: '基础语法', link: '/sql/postgresql/basics' },
+            { text: '数据类型', link: '/sql/postgresql/types' },
+            { text: '查询与操作', link: '/sql/postgresql/query' },
+            { text: '事务与锁', link: '/sql/postgresql/transaction' },
+            { text: '视图与索引', link: '/sql/postgresql/view-index' },
+            { text: '存储过程与函数', link: '/sql/postgresql/procedure' },
+            { text: '性能优化', link: '/sql/postgresql/performance' },
+            { text: '安全与权限', link: '/sql/postgresql/security' },
+            { text: '备份与恢复', link: '/sql/postgresql/backup' },
+            { text: '实战案例', link: '/sql/projects/postgresql' },
+            { text: '工具链', link: '/sql/postgresql/tools' }
           ]
         },
         {
-          text: '数据库实战',
+          text: 'SQLite',
           items: [
-            { text: 'MySQL 实战', link: '/sql/projects/mysql' },
-            { text: 'PostgreSQL 实战', link: '/sql/projects/postgresql' },
-            { text: 'SQLite 实战', link: '/sql/projects/sqlite' }
+            { text: '基础语法', link: '/sql/sqlite/basics' },
+            { text: '数据类型', link: '/sql/sqlite/types' },
+            { text: '查询与操作', link: '/sql/sqlite/query' },
+            { text: '事务与锁', link: '/sql/sqlite/transaction' },
+            { text: '视图与索引', link: '/sql/sqlite/view-index' },
+            { text: '存储过程与函数', link: '/sql/sqlite/procedure' },
+            { text: '性能优化', link: '/sql/sqlite/performance' },
+            { text: '安全与权限', link: '/sql/sqlite/security' },
+            { text: '备份与恢复', link: '/sql/sqlite/backup' },
+            { text: '实战案例', link: '/sql/projects/sqlite' },
+            { text: '工具链', link: '/sql/sqlite/tools' }
+          ]
+        },
+        {
+          text: 'Oracle',
+          items: [
+            { text: '基础语法', link: '/sql/oracle/basics' },
+            { text: '数据类型', link: '/sql/oracle/types' },
+            { text: '查询与操作', link: '/sql/oracle/query' },
+            { text: '事务与锁', link: '/sql/oracle/transaction' },
+            { text: '视图与索引', link: '/sql/oracle/view-index' },
+            { text: '存储过程与函数', link: '/sql/oracle/procedure' },
+            { text: '性能优化', link: '/sql/oracle/performance' },
+            { text: '安全与权限', link: '/sql/oracle/security' },
+            { text: '备份与恢复', link: '/sql/oracle/backup' },
+            { text: '实战案例', link: '/sql/projects/oracle' },
+            { text: '工具链', link: '/sql/oracle/tools' }
+          ]
+        },
+        {
+          text: 'SQL Server',
+          items: [
+            { text: '基础语法', link: '/sql/sqlserver/basics' },
+            { text: '数据类型', link: '/sql/sqlserver/types' },
+            { text: '查询与操作', link: '/sql/sqlserver/query' },
+            { text: '事务与锁', link: '/sql/sqlserver/transaction' },
+            { text: '视图与索引', link: '/sql/sqlserver/view-index' },
+            { text: '存储过程与函数', link: '/sql/sqlserver/procedure' },
+            { text: '性能优化', link: '/sql/sqlserver/performance' },
+            { text: '安全与权限', link: '/sql/sqlserver/security' },
+            { text: '备份与恢复', link: '/sql/sqlserver/backup' },
+            { text: '实战案例', link: '/sql/projects/sqlserver' },
+            { text: '工具链', link: '/sql/sqlserver/tools' }
           ]
         }
       ],
       /**
-       * AI Agent 侧边栏配置
+       * AI Agent 侧边栏配置（超级详细版）
        * @type {import('vitepress').DefaultTheme.Sidebar}
+       * @description 覆盖主流 AI Agent 框架、能力、Ops、Prompt 工程、应用等
        */
       '/ai-agent/': [
         {
@@ -959,15 +1151,24 @@ export default defineConfig({
             { text: 'LangChain', link: '/ai-agent/frameworks/langchain' },
             { text: 'AutoGen', link: '/ai-agent/frameworks/autogen' },
             { text: 'CrewAI', link: '/ai-agent/frameworks/crewai' },
-            { text: 'MetaGPT', link: '/ai-agent/frameworks/metagpt' }
+            { text: 'MetaGPT', link: '/ai-agent/frameworks/metagpt' },
+            { text: 'Haystack', link: '/ai-agent/frameworks/haystack' },
+            { text: 'Flowise', link: '/ai-agent/frameworks/flowise' },
+            { text: 'AgentVerse', link: '/ai-agent/frameworks/agentverse' },
+            { text: '其他框架', link: '/ai-agent/frameworks/others' }
           ]
         },
         {
-          text: '应用案例',
+          text: '能力与组件',
           items: [
-            { text: '智能问答', link: '/ai-agent/cases/qa' },
-            { text: '自动化办公', link: '/ai-agent/cases/office' },
-            { text: '多智能体协作', link: '/ai-agent/cases/multi-agent' }
+            { text: '感知与解析', link: '/ai-agent/abilities/perception' },
+            { text: '规划与决策', link: '/ai-agent/abilities/planning' },
+            { text: '行动与执行', link: '/ai-agent/abilities/action' },
+            { text: '自主学习', link: '/ai-agent/abilities/learning' },
+            { text: '多智能体协作', link: '/ai-agent/abilities/multi-agent' },
+            { text: '工具集成', link: '/ai-agent/abilities/tools' },
+            { text: '记忆与知识库', link: '/ai-agent/abilities/memory' },
+            { text: '环境交互', link: '/ai-agent/abilities/environment' }
           ]
         },
         {
@@ -975,7 +1176,9 @@ export default defineConfig({
           items: [
             { text: 'AgentOps 概述', link: '/ai-agent/agentops' },
             { text: '监控与评估', link: '/ai-agent/agentops/monitor' },
-            { text: '持续优化', link: '/ai-agent/agentops/optimize' }
+            { text: '持续优化', link: '/ai-agent/agentops/optimize' },
+            { text: '安全与合规', link: '/ai-agent/agentops/security' },
+            { text: '部署与运维', link: '/ai-agent/agentops/deploy' }
           ]
         },
         {
@@ -983,7 +1186,22 @@ export default defineConfig({
           items: [
             { text: 'Prompt 设计', link: '/ai-agent/prompt' },
             { text: '提示词模式', link: '/ai-agent/prompt/patterns' },
-            { text: '实战案例', link: '/ai-agent/prompt/cases' }
+            { text: '实战案例', link: '/ai-agent/prompt/cases' },
+            { text: '多轮对话', link: '/ai-agent/prompt/multi-turn' },
+            { text: '上下文管理', link: '/ai-agent/prompt/context' }
+          ]
+        },
+        {
+          text: '应用案例',
+          items: [
+            { text: '智能问答', link: '/ai-agent/cases/qa' },
+            { text: '自动化办公', link: '/ai-agent/cases/office' },
+            { text: '多智能体协作', link: '/ai-agent/cases/multi-agent' },
+            { text: '自动编程', link: '/ai-agent/cases/code' },
+            { text: '自动化科研', link: '/ai-agent/cases/research' },
+            { text: '智能搜索与推荐', link: '/ai-agent/cases/search' },
+            { text: 'RPA 流程机器人', link: '/ai-agent/cases/rpa' },
+            { text: '其他应用', link: '/ai-agent/cases/others' }
           ]
         }
       ],
