@@ -701,6 +701,26 @@ export default defineConfig({
           ]
         }
       ],
+      '/basic/nodejs/': [
+        {
+          text: 'Node.js 专题',
+          collapsed: false,
+          items: [
+            { text: 'Node.js 简介', link: '/basic/nodejs/' },
+            { text: '模块系统', link: '/basic/nodejs/module-system' },
+            { text: '文件与路径操作', link: '/basic/nodejs/file-path' },
+            { text: '异步与事件循环', link: '/basic/nodejs/async-event-loop' },
+            { text: '进程与线程', link: '/basic/nodejs/process-thread' },
+            { text: '网络编程', link: '/basic/nodejs/network' },
+            { text: '流与缓冲区', link: '/basic/nodejs/stream-buffer' },
+            { text: '包管理与npm', link: '/basic/nodejs/npm' },
+            { text: '常用内置模块', link: '/basic/nodejs/built-in-modules' },
+            { text: '测试与调试', link: '/basic/nodejs/testing-debugging' },
+            { text: 'Node.js 性能优化', link: '/basic/nodejs/performance' },
+            { text: 'Node.js 实战项目', link: '/basic/nodejs/projects' }
+          ]
+        }
+      ],
     },
 
     socialLinks: [
