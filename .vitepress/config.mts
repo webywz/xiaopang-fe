@@ -130,15 +130,15 @@ export default defineConfig({
       {
         text: 'Spring',
         items: [
-          { text: '环境搭建', link: '/springboot/setup' },
-          { text: '核心注解', link: '/springboot/annotations' },
-          { text: '配置文件', link: '/springboot/configuration' },
-          { text: 'Web开发', link: '/springboot/web' },
-          { text: '数据访问', link: '/springboot/data-access' },
-          { text: '安全与认证', link: '/springboot/security' },
-          { text: '测试', link: '/springboot/testing' },
-          { text: '部署', link: '/springboot/deployment' },
-          { text: '实战项目', link: '/springboot/projects' },
+          { text: '环境搭建', link: '/spring/springboot/setup' },
+          { text: '核心注解', link: '/spring/springboot/annotations' },
+          { text: '配置文件', link: '/spring/springboot/configuration' },
+          { text: 'Web开发', link: '/spring/springboot/web' },
+          { text: '数据访问', link: '/spring/springboot/data-access' },
+          { text: '安全与认证', link: '/spring/springboot/security' },
+          { text: '测试', link: '/spring/springboot/testing' },
+          { text: '部署', link: '/spring/springboot/deployment' },
+          { text: '实战项目', link: '/spring/springboot/projects' },
           { text: 'Spring Cloud Alibaba', link: '/spring/spring-cloud-alibaba' },
           { text: 'Spring Boot Admin', link: '/spring/spring-boot-admin' },
           { text: 'Spring WebFlux', link: '/spring/spring-webflux' },
@@ -651,20 +651,40 @@ export default defineConfig({
           ]
         }
       ],
-      '/springboot/': [
+      '/spring/springboot/': [
         {
           text: 'SpringBoot 教程',
           items: [
-            { text: 'SpringBoot简介', link: '/springboot/' },
-            { text: '环境搭建', link: '/springboot/setup' },
-            { text: '核心注解', link: '/springboot/annotations' },
-            { text: '配置文件', link: '/springboot/configuration' },
-            { text: 'Web开发', link: '/springboot/web' },
-            { text: '数据访问', link: '/springboot/data-access' },
-            { text: '安全与认证', link: '/springboot/security' },
-            { text: '测试', link: '/springboot/testing' },
-            { text: '部署', link: '/springboot/deployment' },
-            { text: '实战项目', link: '/springboot/projects' }
+            { text: 'SpringBoot简介', link: '/spring/springboot/' },
+            { text: '环境搭建', link: '/spring/springboot/setup' },
+            { text: '核心注解', link: '/spring/springboot/annotations' },
+            { text: '配置文件', link: '/spring/springboot/configuration' },
+            { text: 'Web开发', link: '/spring/springboot/web' },
+            { text: '数据访问', link: '/spring/springboot/data-access' },
+            { text: '安全与认证', link: '/spring/springboot/security' },
+            { text: '测试', link: '/spring/springboot/testing' },
+            { text: '部署', link: '/spring/springboot/deployment' },
+            { text: '实战项目', link: '/spring/springboot/projects' }
+          ]
+        }
+      ],
+      '/spring/': [
+        {
+          text: 'Spring 专题',
+          collapsed: false,
+          items: [
+            { text: 'Spring Cloud Alibaba', link: '/spring/spring-cloud-alibaba' },
+            { text: 'Spring Boot Admin', link: '/spring/spring-boot-admin' },
+            { text: 'Spring WebFlux', link: '/spring/spring-webflux' },
+            { text: 'Spring AMQP', link: '/spring/spring-amqp' },
+            { text: 'Spring Session', link: '/spring/spring-session' },
+            { text: 'Spring Integration', link: '/spring/spring-integration' },
+            { text: 'Spring Batch', link: '/spring/spring-batch' },
+            { text: 'Spring MVC', link: '/spring/spring-mvc' },
+            { text: 'Spring Cloud', link: '/spring/spring-cloud' },
+            { text: 'Spring Security', link: '/spring/spring-security' },
+            { text: 'Spring Data', link: '/spring/spring-data' },
+            { text: 'Spring Framework', link: '/spring/spring-framework' }
           ]
         }
       ],
@@ -672,12 +692,12 @@ export default defineConfig({
         {
           text: 'Web3 教程',
           items: [
-            { text: 'Web3简介', link: '/web3/' },
-            { text: '以太坊基础', link: '/web3/ethereum' },
-            { text: '智能合约', link: '/web3/smart-contract' },
-            { text: '钱包与签名', link: '/web3/wallet' },
-            { text: 'DApp开发', link: '/web3/dapp' },
-            { text: '常见工具', link: '/web3/tools' }
+            { text: 'Web3简介', link: '/docs/web3/' },
+            { text: '以太坊基础', link: '/docs/web3/ethereum' },
+            { text: '智能合约', link: '/docs/web3/smart-contract' },
+            { text: '钱包与签名', link: '/docs/web3/wallet' },
+            { text: 'DApp开发', link: '/docs/web3/dapp' },
+            { text: '常见工具', link: '/docs/web3/tools' }
           ]
         }
       ],
