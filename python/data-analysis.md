@@ -5,53 +5,100 @@ title: 数据分析
 # Python 数据分析
 
 ## 目录
-- Numpy
-- Pandas
-- Matplotlib
-- 数据读取
-- 数据清洗
-- 可视化
-- JSDoc 注释示例
+- 数据分析流程概览
+- Numpy 进阶
+- Pandas 进阶
+- Matplotlib 可视化
+- 数据读取与导出
+- 数据清洗与变换
+- 分组与聚合
+- 常见数据分析案例
+- 常见坑与最佳实践
+- FAQ
+- 扩展阅读
 
-## Numpy
-- 科学计算基础库，支持高效数组运算
+## 数据分析流程概览
+1. 明确分析目标
+2. 数据采集与读取
+3. 数据清洗与预处理
+4. 数据探索与可视化
+5. 特征工程与建模
+6. 结果解读与报告
+
+## Numpy 进阶
+- 支持高效数组运算、广播、切片、掩码、线性代数
 ```python
 import numpy as np
-a = np.array([1, 2, 3])
-print(a.mean())
+a = np.arange(10).reshape(2, 5)
+print(a.mean(axis=0))
+print(a[a > 5])  # 布尔索引
 ```
+- 常用函数：np.mean, np.std, np.dot, np.linalg.inv, np.concatenate
 
-## Pandas
-- 数据分析与处理库，DataFrame 是核心结构
+## Pandas 进阶
+- DataFrame/Series，支持索引、切片、缺失值处理、分组、透视表、合并
 ```python
 import pandas as pd
-df = pd.DataFrame({'a': [1, 2], 'b': [3, 4]})
-print(df.describe())
+df = pd.DataFrame({'a': [1, 2, None], 'b': [3, 4, 5]})
+df = df.fillna(0)
+grouped = df.groupby('a').sum()
+print(df.describe(), grouped)
 ```
+- 常用方法：fillna, dropna, groupby, pivot_table, merge, apply, map, astype
 
-## Matplotlib
-- 可视化绘图库
+## Matplotlib 可视化
+- 支持折线图、柱状图、散点图、直方图、子图、样式美化
 ```python
 import matplotlib.pyplot as plt
-plt.plot([1,2,3],[4,5,6])
+plt.figure(figsize=(6,4))
+plt.plot([1,2,3],[4,5,6], label='折线')
+plt.bar([1,2,3],[4,5,6], alpha=0.5)
+plt.legend()
+plt.title('示例图')
+plt.xlabel('X轴')
+plt.ylabel('Y轴')
 plt.show()
 ```
 
-## 数据读取
-- 支持 CSV、Excel、SQL 等多种格式
+## 数据读取与导出
+- 支持 CSV、Excel、SQL、JSON 等多种格式
 ```python
 df = pd.read_csv('data.csv')
+df.to_excel('out.xlsx')
 ```
 
-## 数据清洗
-- 缺失值处理、去重、类型转换等
+## 数据清洗与变换
+- 缺失值处理、去重、类型转换、字符串处理、重命名、排序
 ```python
-df = df.dropna()
 df = df.drop_duplicates()
+df['a'] = df['a'].astype(int)
+df = df.rename(columns={'a': 'A'})
 ```
 
-## 可视化
-- 折线图、柱状图、散点图等
+## 分组与聚合
+- groupby、agg、pivot_table
+```python
+grouped = df.groupby('A').agg({'b': 'mean'})
+pivot = df.pivot_table(index='A', values='b', aggfunc='sum')
+```
+
+## 常见数据分析案例
+- 销售数据分析、用户行为分析、异常检测、数据可视化报告
+
+## 常见坑与最佳实践
+- Numpy/Pandas 索引从 0 开始，切片不含右端点
+- DataFrame 赋值建议用 .loc/.iloc，避免链式赋值警告
+- 读写大文件建议分块处理
+- Matplotlib 中文显示需配置字体
+- 建议用虚拟环境隔离依赖
+
+## FAQ
+- Q: Pandas 如何合并多个表？
+  A: `pd.merge(df1, df2, on='key')` 或 `pd.concat([df1, df2])`
+- Q: 如何处理缺失值？
+  A: `df.fillna(0)` 或 `df.dropna()`
+- Q: 如何画多子图？
+  A: `plt.subplot(行,列,编号)`
 
 ## JSDoc 注释示例
 ```python
@@ -70,6 +117,12 @@ def load_csv(path):
     return pd.read_csv(path)
 ```
 
+## 扩展阅读
+- [Pandas 官方文档](https://pandas.pydata.org/docs/)
+- [Numpy 官方文档](https://numpy.org/doc/stable/)
+- [Matplotlib 官方文档](https://matplotlib.org/stable/contents.html)
+- [数据分析实战案例](https://www.kaggle.com/)
+
 ---
 
-> 数据分析是数据驱动决策的基础，建议多练习 Pandas 和 Numpy。 
+> 数据分析是数据驱动决策的基础，建议多练习 Pandas、Numpy、Matplotlib，结合实际案例提升能力。 

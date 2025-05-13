@@ -203,6 +203,7 @@ export default defineConfig({
           { text: '数据分析', link: '/python/data-analysis' },
           { text: '机器学习', link: '/python/machine-learning' },
           { text: '自动化脚本', link: '/python/automation' },
+          { text: '爬虫开发', link: '/python/spider' },
           { text: '实战项目', link: '/python/projects' }
         ]
       },
@@ -849,6 +850,7 @@ export default defineConfig({
             { text: 'Web开发', link: '/python/web' },
             { text: '数据分析', link: '/python/data-analysis' },
             { text: '机器学习', link: '/python/machine-learning' },
+            { text: '爬虫开发', link: '/python/spider' },
             { text: '自动化脚本', link: '/python/automation' }
           ]
         },
