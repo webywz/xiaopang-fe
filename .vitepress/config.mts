@@ -30,6 +30,11 @@ import { createHtmlSpecialTagsFix } from './html-special-tags-fix'
  * @type {import('vitepress').DefaultTheme.Sidebar}
  */
 
+/**
+ * Python 相关导航与侧边栏配置
+ * @description 为 VitePress 文档新增 Python 相关的导航和侧边栏入口，并细化内容
+ */
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "小胖",
@@ -182,6 +187,23 @@ export default defineConfig({
           { text: '性能与优化', link: '/solidity/optimization' },
           { text: '主流开发框架', link: '/solidity/frameworks' },
           { text: '实战项目', link: '/solidity/projects' }
+        ]
+      },
+      {
+        text: 'Python',
+        items: [
+          { text: 'Python简介', link: '/python/' },
+          { text: '环境搭建', link: '/python/setup' },
+          { text: '基础语法', link: '/python/basics' },
+          { text: '数据结构', link: '/python/data-structures' },
+          { text: '面向对象', link: '/python/oop' },
+          { text: '标准库', link: '/python/standard-library' },
+          { text: '第三方库', link: '/python/third-party' },
+          { text: 'Web开发', link: '/python/web' },
+          { text: '数据分析', link: '/python/data-analysis' },
+          { text: '机器学习', link: '/python/machine-learning' },
+          { text: '自动化脚本', link: '/python/automation' },
+          { text: '实战项目', link: '/python/projects' }
         ]
       },
     ],
@@ -801,6 +823,39 @@ export default defineConfig({
                 { text: 'Vite插件系统源码解析', link: '/blog/vite-plugin-system-source-code' },
               ]
             }
+          ]
+        }
+      ],
+      /**
+       * Python 侧边栏配置
+       * @type {import('vitepress').DefaultTheme.Sidebar}
+       */
+      '/python/': [
+        {
+          text: 'Python 基础',
+          items: [
+            { text: 'Python简介', link: '/python/python/' },
+            { text: '环境搭建', link: '/python/setup' },
+            { text: '基础语法', link: '/python/basics' },
+            { text: '数据结构', link: '/python/data-structures' },
+            { text: '面向对象', link: '/python/oop' },
+            { text: '标准库', link: '/python/standard-library' }
+          ]
+        },
+        {
+          text: 'Python 进阶',
+          items: [
+            { text: '第三方库', link: '/python/third-party' },
+            { text: 'Web开发', link: '/python/web' },
+            { text: '数据分析', link: '/python/data-analysis' },
+            { text: '机器学习', link: '/python/machine-learning' },
+            { text: '自动化脚本', link: '/python/automation' }
+          ]
+        },
+        {
+          text: '实战项目',
+          items: [
+            { text: '实战项目', link: '/python/projects' }
           ]
         }
       ],
