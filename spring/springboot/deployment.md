@@ -2,10 +2,10 @@
 title: 部署
 ---
 
-/**
+<!-- /**
  * SpringBoot 部署
  * @description 深入讲解 SpringBoot 项目的打包、传统服务器部署、Nginx 反向代理、Docker 容器化、K8s 云原生、CI/CD 自动化、配置安全、日志与监控、常见问题与最佳实践、FAQ
- */
+ */ -->
 
 # 部署
 

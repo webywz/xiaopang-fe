@@ -2,10 +2,10 @@
 title: Spring Cloud Alibaba 详解
 ---
 
-/**
+<!-- /**
  * Spring Cloud Alibaba 详解
  * @description Spring Cloud Alibaba生态全景，Nacos、Sentinel、RocketMQ、Seata、Dubbo、OSS、SMS、SchedulerX等中间件，微服务全链路监控与安全，源码、配置、实战、生产运维、最佳实践与FAQ，极致细化，适合架构师与高级开发者
- */
+ */ -->
 
 # Spring Cloud Alibaba 详解
 

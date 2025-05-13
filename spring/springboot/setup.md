@@ -2,10 +2,10 @@
 title: 环境搭建
 ---
 
-/**
+<!-- /**
  * SpringBoot 环境搭建
  * @description 详细介绍 SpringBoot 开发环境的准备，包括 JDK、IDE、构建工具、国内镜像、Spring Initializr、项目结构、Spring 全家桶简介、常见问题等
- */
+ */ -->
 
 # 环境搭建
 

@@ -1,7 +1,7 @@
-/**
+<!-- /**
  * Java 数据库与ORM
  * @description Java 数据库开发与主流 ORM 框架（JDBC、连接池、MyBatis、Hibernate、JPA、事务、迁移、安全、最佳实践）
- */
+ */ -->
 
 # Java 数据库与 ORM 详解
 

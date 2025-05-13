@@ -2,10 +2,10 @@
 title: Spring MVC 详解
 ---
 
-/**
+<!-- /**
  * Spring MVC 详解
  * @description 深入讲解 Spring MVC 的核心原理、请求流程、常用注解、参数绑定、数据校验、拦截器、异常处理、文件上传、与 SpringBoot 集成、源码剖析、最佳实践、FAQ
- */
+ */ -->
 
 # Spring MVC 详解
 

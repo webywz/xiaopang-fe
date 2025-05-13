@@ -2,10 +2,10 @@
 title: Spring Cloud 详解
 ---
 
-/**
+<!-- /**
  * Spring Cloud 详解
  * @description 微服务架构与Spring Cloud生态全景，服务注册与发现、负载均衡、服务调用、配置中心、服务网关、容错熔断、链路追踪、消息驱动、分布式事务、全链路安全、生产运维、最佳实践与FAQ，极致细化，适合架构师与高级开发者
- */
+ */ -->
 
 # Spring Cloud 详解
 

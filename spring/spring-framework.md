@@ -2,10 +2,10 @@
 title: Spring Framework 核心详解
 ---
 
-/**
+<!-- /**
  * Spring Framework 核心详解
  * @description 深入讲解 Spring Framework 的核心原理、IoC、AOP、Bean 生命周期、配置方式、常用注解、与 SpringBoot 的关系、源码剖析、最佳实践、FAQ
- */
+ */ -->
 
 # Spring Framework 核心详解
 

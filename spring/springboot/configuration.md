@@ -2,10 +2,10 @@
 title: 配置文件
 ---
 
-/**
+<!-- /**
  * SpringBoot 配置文件
  * @description 深入讲解 application.properties/yml、分环境配置、外部化配置、加载顺序、类型安全、加密、热更新、常见问题与最佳实践
- */
+ */ -->
 
 # 配置文件
 

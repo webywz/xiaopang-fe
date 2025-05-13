@@ -2,10 +2,10 @@
 title: Spring Data 详解
 ---
 
-/**
+<!-- /**
  * Spring Data 详解
  * @description 深入讲解 Spring Data 家族（JPA、MongoDB、Redis、Elasticsearch等）的核心原理、Repository、自动实现、查询方法、注解、配置、分页排序、复杂查询、事务、与SpringBoot集成、源码剖析、最佳实践、FAQ
- */
+ */ -->
 
 # Spring Data 详解
 

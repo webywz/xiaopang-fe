@@ -2,10 +2,10 @@
 title: Spring Batch 详解
 ---
 
-/**
+<!-- /**
  * Spring Batch 详解
  * @description 批处理架构与Spring Batch生态全景，Job/Step/ExecutionContext/JobRepository等核心原理、源码、时序图，ItemReader/Processor/Writer详解，任务调度与分片，容错与重试，事务管理与幂等性，批量数据校验与性能调优，作业参数与监听器，高级用法，Spring Boot集成，生产运维，最佳实践与FAQ，极致细化，适合架构师与高级开发者
- */
+ */ -->
 
 # Spring Batch 详解
 

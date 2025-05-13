@@ -2,10 +2,10 @@
 title: Spring Boot Admin 详解
 ---
 
-/**
+<!-- /**
  * Spring Boot Admin 详解
  * @description Spring Boot Admin架构与生态全景，服务注册、健康检查、监控、告警、UI、服务端与客户端配置、源码、集群高可用、告警通知、安全机制、与Spring Boot/Cloud/K8s/Prometheus集成、生产运维、最佳实践与FAQ，极致细化，适合架构师与高级开发者
- */
+ */ -->
 
 # Spring Boot Admin 详解
 

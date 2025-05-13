@@ -2,10 +2,10 @@
 title: Spring AMQP 详解
 ---
 
-/**
+<!-- /**
  * Spring AMQP 详解
  * @description 消息中间件与Spring AMQP生态全景，核心原理、交换机/队列/路由、消息生产消费、事务与幂等、死信与延迟队列、安全机制、监控与自动化、Spring Boot集成、生产运维、最佳实践与FAQ，极致细化，适合架构师与高级开发者
- */
+ */ -->
 
 # Spring AMQP 详解
 

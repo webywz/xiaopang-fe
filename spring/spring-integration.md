@@ -2,10 +2,10 @@
 title: Spring Integration 详解
 ---
 
-/**
+<!-- /**
  * Spring Integration 详解
  * @description 企业集成模式与Spring Integration生态全景，消息通道、消息、MessageHandler、MessageSource等核心原理、源码、时序图，通道类型、适配器、EIP组件、流程编排与DSL、事务与幂等、Spring Boot集成、生产运维、最佳实践与FAQ，极致细化，适合架构师与高级开发者
- */
+ */ -->
 
 # Spring Integration 详解
 

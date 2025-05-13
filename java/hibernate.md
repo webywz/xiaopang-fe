@@ -1,7 +1,7 @@
-/**
+<!-- /**
  * Hibernate 深入详解
  * @description Hibernate 配置、实体映射、CRUD、复杂查询、缓存、性能优化、Spring集成、常见问题
- */
+ */ -->
 
 # Hibernate 深入详解
 
