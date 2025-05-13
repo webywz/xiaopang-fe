@@ -35,6 +35,16 @@ import { createHtmlSpecialTagsFix } from './html-special-tags-fix'
  * @description 为 VitePress 文档新增 Python 相关的导航和侧边栏入口，并细化内容
  */
 
+/**
+ * SQL 相关导航配置
+ * @description 为 VitePress 文档新增 SQL 相关的导航入口
+ */
+
+/**
+ * AI Agent 相关导航配置
+ * @description 为 VitePress 文档新增 AI Agent 相关的导航入口
+ */
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "小胖",
@@ -206,6 +216,33 @@ export default defineConfig({
           { text: '自动化脚本', link: '/python/automation' },
           { text: '爬虫开发', link: '/python/spider' },
           { text: '实战项目', link: '/python/projects' }
+        ]
+      },
+      {
+        /**
+         * SQL 相关导航配置
+         * @description 为 VitePress 文档新增 SQL 相关的导航入口
+         */
+        text: 'SQL',
+        items: [
+          { text: 'SQL 基础', link: '/sql/' },
+          { text: 'SQL 进阶', link: '/sql/advanced' },
+          { text: '性能优化', link: '/sql/performance' },
+          { text: '数据库实战', link: '/sql/projects/mysql' }
+        ]
+      },
+      {
+        /**
+         * AI Agent 相关导航配置
+         * @description 为 VitePress 文档新增 AI Agent 相关的导航入口
+         */
+        text: 'AI Agent',
+        items: [
+          { text: '基础原理', link: '/ai-agent/' },
+          { text: '主流框架', link: '/ai-agent/frameworks/langchain' },
+          { text: '应用案例', link: '/ai-agent/cases/qa' },
+          { text: 'AgentOps', link: '/ai-agent/agentops' },
+          { text: 'Prompt 工程', link: '/ai-agent/prompt' }
         ]
       },
     ],
@@ -860,6 +897,93 @@ export default defineConfig({
           text: '实战项目',
           items: [
             { text: '实战项目', link: '/python/projects' }
+          ]
+        }
+      ],
+      /**
+       * SQL 侧边栏配置
+       * @type {import('vitepress').DefaultTheme.Sidebar}
+       */
+      '/sql/': [
+        {
+          text: 'SQL 基础',
+          items: [
+            { text: 'SQL 简介', link: '/sql/' },
+            { text: '常用语法', link: '/sql/syntax' },
+            { text: '数据类型', link: '/sql/types' },
+            { text: '查询与操作', link: '/sql/query' }
+          ]
+        },
+        {
+          text: 'SQL 进阶',
+          items: [
+            { text: '复杂查询', link: '/sql/advanced' },
+            { text: '事务与锁', link: '/sql/transaction' },
+            { text: '视图与索引', link: '/sql/view-index' },
+            { text: '存储过程', link: '/sql/procedure' }
+          ]
+        },
+        {
+          text: '性能优化',
+          items: [
+            { text: 'SQL 优化技巧', link: '/sql/performance' },
+            { text: '慢查询分析', link: '/sql/slow-query' },
+            { text: '数据库调优', link: '/sql/db-tuning' }
+          ]
+        },
+        {
+          text: '数据库实战',
+          items: [
+            { text: 'MySQL 实战', link: '/sql/projects/mysql' },
+            { text: 'PostgreSQL 实战', link: '/sql/projects/postgresql' },
+            { text: 'SQLite 实战', link: '/sql/projects/sqlite' }
+          ]
+        }
+      ],
+      /**
+       * AI Agent 侧边栏配置
+       * @type {import('vitepress').DefaultTheme.Sidebar}
+       */
+      '/ai-agent/': [
+        {
+          text: 'AI Agent 基础',
+          items: [
+            { text: 'AI Agent 简介', link: '/ai-agent/' },
+            { text: '核心原理', link: '/ai-agent/principle' },
+            { text: '常用术语', link: '/ai-agent/terms' }
+          ]
+        },
+        {
+          text: '主流框架',
+          items: [
+            { text: 'LangChain', link: '/ai-agent/frameworks/langchain' },
+            { text: 'AutoGen', link: '/ai-agent/frameworks/autogen' },
+            { text: 'CrewAI', link: '/ai-agent/frameworks/crewai' },
+            { text: 'MetaGPT', link: '/ai-agent/frameworks/metagpt' }
+          ]
+        },
+        {
+          text: '应用案例',
+          items: [
+            { text: '智能问答', link: '/ai-agent/cases/qa' },
+            { text: '自动化办公', link: '/ai-agent/cases/office' },
+            { text: '多智能体协作', link: '/ai-agent/cases/multi-agent' }
+          ]
+        },
+        {
+          text: 'AgentOps',
+          items: [
+            { text: 'AgentOps 概述', link: '/ai-agent/agentops' },
+            { text: '监控与评估', link: '/ai-agent/agentops/monitor' },
+            { text: '持续优化', link: '/ai-agent/agentops/optimize' }
+          ]
+        },
+        {
+          text: 'Prompt 工程',
+          items: [
+            { text: 'Prompt 设计', link: '/ai-agent/prompt' },
+            { text: '提示词模式', link: '/ai-agent/prompt/patterns' },
+            { text: '实战案例', link: '/ai-agent/prompt/cases' }
           ]
         }
       ],
