@@ -166,7 +166,8 @@ export default defineConfig({
           { text: '智能合约', link: '/web3/smart-contract' },
           { text: '钱包与签名', link: '/web3/wallet' },
           { text: 'DApp开发', link: '/web3/dapp' },
-          { text: '常见工具', link: '/web3/tools' }
+          { text: '常见工具', link: '/web3/tools' },
+          { text: 'Web3.js', link: '/web3/web3js' }
         ]
       },
       {
@@ -654,7 +655,8 @@ export default defineConfig({
             { text: '智能合约', link: '/web3/smart-contract' },
             { text: '钱包与签名', link: '/web3/wallet' },
             { text: 'DApp开发', link: '/web3/dapp' },
-            { text: '常见工具', link: '/web3/tools' }
+            { text: '常见工具', link: '/web3/tools' },
+            { text: 'Web3.js', link: '/web3/web3js' }
           ]
         }
       ],
