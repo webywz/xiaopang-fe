@@ -67,10 +67,10 @@ export default defineConfig({
       { 
         text: '基础进阶', 
         items: [
-          { text: 'JavaScript深入', link: '/basic/tags/javascript' },
-          { text: 'CSS高级技巧', link: '/basic/tags/css/' },
-          { text: 'HTML5新特性', link: '/basic/tags/html/' },
-          { text: '浏览器原理', link: '/basic/tags/browser/' },
+          { text: 'JavaScript深入', link: '/basic/JavaScript/' },
+          { text: 'CSS高级技巧', link: '/basic/css/' },
+          { text: 'HTML5新特性', link: '/basic/HTML/' },
+          { text: '浏览器原理', link: '/basic/browser/' },
         ]
       },
       { 
@@ -171,14 +171,242 @@ export default defineConfig({
        * 基础进阶侧边栏配置
        * @type {import('vitepress').DefaultTheme.Sidebar}
        */
-      '/basic/tags/': [
+      '/basic/JavaScript/': [
         {
-          text: '基础进阶',
+          text: 'JavaScript深入系列文章',
+          collapsed: false,
           items: [
-            { text: 'JavaScript深入', link: '/basic/tags/javascript' },
-            { text: 'CSS高级技巧', link: '/basic/tags/css/' },
-            { text: 'HTML5新特性', link: '/basic/tags/html/' },
-            { text: '浏览器原理', link: '/basic/tags/browser/' },
+            {
+              text: '精选文章',
+              collapsed: false,
+              items: [
+                { text: 'JavaScript异步编程全解析', link: '/basic/JavaScript/' },
+                { text: 'JavaScript设计模式实战指南', link: '/basic/JavaScript/javascript-design-patterns' },
+                { text: '深入理解JavaScript原型链', link: '/basic/JavaScript/javascript-prototype-chain' },
+                { text: 'JavaScript内存管理与垃圾回收机制', link: '/basic/JavaScript/javascript-memory-management' },
+                { text: 'JavaScript函数式编程指南', link: '/basic/JavaScript/javascript-functional-programming' }
+              ]
+            },
+            {
+              text: '核心概念',
+              collapsed: false,
+              items: [
+                { text: 'JavaScript执行上下文与作用域详解', link: '/basic/JavaScript/javascript-execution-context' },
+                { text: '深入理解JavaScript闭包', link: '/basic/JavaScript/javascript-closures' },
+                { text: 'JavaScript中的this指向完全指南', link: '/basic/JavaScript/javascript-this-keyword' },
+                { text: 'JavaScript模块化开发历史与实践', link: '/basic/JavaScript/javascript-modules' }
+              ]
+            },
+            {
+              text: '高级特性',
+              collapsed: false,
+              items: [
+                { text: 'ES2022/ES2023新特性解析', link: '/basic/JavaScript/javascript-es2023-features' },
+                { text: 'JavaScript中的元编程技术', link: '/basic/JavaScript/javascript-metaprogramming' },
+                { text: 'JavaScript装饰器实战指南', link: '/basic/JavaScript/javascript-decorators' },
+                { text: 'JavaScript迭代器与生成器深度解析', link: '/basic/JavaScript/javascript-iterators-generators' }
+              ]
+            },
+            {
+              text: '性能优化',
+              collapsed: false,
+              items: [
+                { text: 'JavaScript高性能编程实践', link: '/basic/JavaScript/javascript-performance-best-practices' },
+                { text: 'JavaScript内存泄漏排查与优化', link: '/basic/JavaScript/javascript-memory-leaks' },
+                { text: '大型JavaScript应用性能优化策略', link: '/basic/JavaScript/large-scale-javascript-optimization' }
+              ]
+            },
+            {
+              text: '进阶主题',
+              collapsed: false,
+              items: [
+                { text: '深入WebAssembly：与JavaScript协同工作', link: '/basic/JavaScript/webassembly-javascript-integration' },
+                { text: 'JavaScript并发模型与事件循环详解', link: '/basic/JavaScript/javascript-concurrency-event-loop' },
+                { text: 'JavaScript安全编程最佳实践', link: '/basic/JavaScript/javascript-security-best-practices' },
+                { text: '构建高性能Web Worker应用', link: '/basic/JavaScript/javascript-web-workers' }
+              ]
+            }
+          ]
+        }
+      ],
+      '/basic/browser/': [
+        {
+          text: '浏览器原理系列文章',
+          collapsed: false,
+          items: [
+            {
+              text: '精选文章',
+              collapsed: false,
+              items: [
+                { text: '浏览器渲染流水线深度解析', link: '/basic/browser/' },
+                { text: '深入理解浏览器的事件循环', link: '/basic/browser/browser-event-loop' },
+                { text: '浏览器存储机制全解析', link: '/basic/browser/browser-storage-mechanisms' },
+                { text: '浏览器网络通信原理', link: '/basic/browser/browser-network-communication' }
+              ]
+            },
+            {
+              text: '渲染原理',
+              collapsed: false,
+              items: [
+                { text: 'Chromium渲染架构详解', link: '/basic/browser/chromium-rendering-architecture' },
+                { text: '关键渲染路径与性能优化', link: '/basic/browser/critical-rendering-path' },
+                { text: '浏览器布局与绘制过程深度解析', link: '/basic/browser/browser-layout-painting' },
+                { text: '浏览器中的图层与合成机制', link: '/basic/browser/browser-layers-compositing' },
+                { text: '浏览器动画性能优化原理', link: '/basic/browser/browser-animation-performance' }
+              ]
+            },
+            {
+              text: 'JavaScript引擎',
+              collapsed: false,
+              items: [
+                { text: 'V8引擎工作原理与优化策略', link: '/basic/browser/v8-engine-internals' },
+                { text: 'JavaScript JIT编译原理', link: '/basic/javascript/javascript-jit-compilation' },
+                { text: '浏览器中的内存管理与垃圾回收', link: '/basic/browser/browser-memory-management' },
+                { text: 'JavaScript引擎如何优化执行速度', link: '/basic/javascript/javascript-engine-optimization' }
+              ]
+            },
+            {
+              text: '网络通信',
+              collapsed: false,
+              items: [
+                { text: '浏览器资源加载优先级解析', link: '/basic/browser/browser-resource-priorities' },
+                { text: 'HTTP/2与HTTP/3在浏览器中的实现', link: '/basic/browser/http2-http3-browser-implementation' },
+                { text: '浏览器缓存机制详解', link: '/basic/browser/browser-caching-mechanisms' },
+                { text: 'WebSocket与Server-Sent Events原理', link: '/basic/browser/websocket-sse-principles' },
+                { text: '跨域资源共享(CORS)完全指南', link: '/basic/browser/cors-complete-guide' }
+              ]
+            },
+            {
+              text: '安全机制',
+              collapsed: false,
+              items: [
+                { text: '浏览器同源策略详解', link: '/basic/browser/same-origin-policy' },
+                { text: '内容安全策略(CSP)实践指南', link: '/basic/browser/content-security-policy' },
+                { text: '浏览器沙箱机制与安全架构', link: '/basic/browser/browser-sandbox-security' },
+                { text: 'Web加密API与安全通信', link: '/basic/browser/web-cryptography-api' },
+                { text: 'XSS与CSRF防御最佳实践', link: '/basic/browser/xss-csrf-prevention' }
+              ]
+            }
+          ]
+        }
+      ],
+      '/basic/HTML/': [
+        {
+          text: 'HTML5新特性系列文章',
+          collapsed: false,
+          items: [
+            {
+              text: '精选文章',
+              collapsed: false,
+              items: [
+                { text: 'HTML5 Web组件开发实战', link: '/basic/HTML/' },
+                { text: 'HTML5语义化标签最佳实践', link: '/basic/HTML/html5-semantic-elements' },
+                { text: 'HTML5表单新特性与验证技术', link: '/basic/HTML/html5-forms-validation' },
+                { text: 'HTML5存储技术全解析', link: '/basic/HTML/html5-storage-technologies' },
+                { text: 'HTML5多媒体处理技术', link: '/basic/HTML/html5-multimedia' }
+              ]
+            },
+            {
+              text: '基础特性',
+              collapsed: false,
+              items: [
+                { text: 'HTML5文档结构与最佳实践', link: '/basic/HTML/html5-document-structure' },
+                { text: 'HTML5数据属性的高级应用', link: '/basic/HTML/html5-data-attributes' },
+                { text: 'HTML5中的微数据与结构化数据', link: '/basic/HTML/html5-microdata' },
+                { text: 'HTML5表单控件深度解析', link: '/basic/HTML/html5-form-controls' }
+              ]
+            },
+            {
+              text: 'Web API',
+              collapsed: false,
+              items: [
+                { text: '使用Intersection Observer优化滚动体验', link: '/basic/HTML/intersection-observer-api' },
+                { text: 'HTML5地理定位API实战指南', link: '/basic/HTML/geolocation-api' },
+                { text: 'HTML5 Canvas高级绘图技术', link: '/basic/HTML/html5-canvas-advanced' },
+                { text: 'WebSockets实时通信实战', link: '/basic/HTML/websockets-real-time' },
+                { text: 'Service Workers与离线Web应用', link: '/basic/HTML/service-workers-offline' }
+              ]
+            },
+            {
+              text: '性能与优化',
+              collapsed: false,
+              items: [
+                { text: 'HTML性能优化最佳实践', link: '/basic/HTML/html-performance-optimization' },
+                { text: '资源预加载与性能优化', link: '/basic/HTML/resource-preloading' },
+                { text: 'HTML文档的关键渲染路径优化', link: '/basic/HTML/critical-rendering-path-html' },
+                { text: '图片懒加载与响应式图片技术', link: '/basic/HTML/lazy-loading-responsive-images' }
+              ]
+            },
+            {
+              text: '前沿技术',
+              collapsed: false,
+              items: [
+                { text: 'Web组件与Shadow DOM实战', link: '/basic/HTML/web-components-shadow-dom' },
+                { text: 'PWA开发实战指南', link: '/basic/HTML/progressive-web-apps' },
+                { text: 'HTML模板技术与虚拟DOM', link: '/basic/HTML/html-templates-virtual-dom' },
+                { text: 'WebXR：构建VR/AR Web体验', link: '/basic/HTML/webxr-development' },
+                { text: 'Web视频与音频处理高级技术', link: '/basic/HTML/web-video-audio-processing' }
+              ]
+            }
+          ]
+        }
+      ],
+      '/basic/css/': [
+        {
+          text: 'CSS高级技巧系列文章',
+          collapsed: false,
+          items: [
+            {
+              text: '精选文章',
+              collapsed: false,
+              items: [
+                { text: 'CSS Grid布局完全指南', link: '/basic/css/' },
+                { text: 'CSS变量（自定义属性）实战应用', link: '/basic/css/css-custom-properties' },
+                { text: 'CSS动画性能优化实战', link: '/basic/css/css-animation-performance' },
+                { text: 'CSS架构设计：组织大型项目的CSS', link: '/basic/css/css-architecture' },
+                { text: '现代响应式设计最佳实践', link: '/basic/css/modern-responsive-design' }
+              ]
+            },
+            {
+              text: '布局技术',
+              collapsed: false,
+              items: [
+                { text: 'Flexbox与Grid：如何选择合适的布局方案', link: '/basic/css/flexbox-vs-grid' },
+                { text: '多列布局与瀑布流实现技巧', link: '/basic/css/css-multi-column-layout' },
+                { text: 'CSS容器查询：响应式设计的未来', link: '/basic/css/css-container-queries' },
+                { text: 'Subgrid深度解析与应用案例', link: '/basic/css/css-subgrid' }
+              ]
+            },
+            {
+              text: '视觉效果',
+              collapsed: false,
+              items: [
+                { text: '高级CSS动画与过渡效果', link: '/basic/css/advanced-css-animations' },
+                { text: 'CSS滤镜与混合模式实战', link: '/basic/css/css-filters-blend-modes' },
+                { text: '使用CSS创建沉浸式3D效果', link: '/basic/css/css-3d-effects' },
+                { text: 'CSS渐变高级技巧与应用', link: '/basic/css/css-gradients' }
+              ]
+            },
+            {
+              text: '性能与优化',
+              collapsed: false,
+              items: [
+                { text: 'CSS性能优化策略', link: '/basic/css/css-performance-optimization' },
+                { text: '关键渲染路径与CSS优化', link: '/basic/css/critical-rendering-path-css' },
+                { text: '如何减少CSS重排与重绘', link: '/basic/css/css-reflow-repaint' },
+                { text: 'CSS代码分割与按需加载', link: '/basic/css/css-code-splitting' }
+              ]
+            },
+            {
+              text: '工具与方法论',
+              collapsed: false,
+              items: [
+                { text: '现代CSS工具链与最佳实践', link: '/basic/css/modern-css-tooling' },
+                { text: 'CSS-in-JS解决方案对比', link: '/basic/css/css-in-js-comparison' },
+                { text: 'CSS模块化开发实践', link: '/basic/css/css-modules' },
+                { text: 'PostCSS插件开发指南', link: '/basic/css/postcss-plugin-development' }
+              ]
+            }
           ]
         }
       ],
