@@ -45,6 +45,11 @@ import { createHtmlSpecialTagsFix } from './html-special-tags-fix'
  * @description 为 VitePress 文档新增 AI Agent 相关的导航入口
  */
 
+/**
+ * Flutter 相关导航与侧边栏配置
+ * @description 为 VitePress 文档新增 Flutter 相关的导航和侧边栏入口，涵盖基础、进阶、生态、实战、工具等内容
+ */
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "小胖",
@@ -379,6 +384,27 @@ export default defineConfig({
               { text: '其他应用', link: '/ai-agent/cases/others' }
             ]
           }
+        ]
+      },
+      {
+        text: 'Flutter',
+        items: [
+          { text: 'Flutter简介', link: '/flutter/' },
+          { text: '环境搭建', link: '/flutter/setup' },
+          { text: '开发工具链', link: '/flutter/tooling' },
+          { text: '基础语法', link: '/flutter/basics' },
+          { text: '核心组件', link: '/flutter/widgets' },
+          { text: '布局与样式', link: '/flutter/layout' },
+          { text: '路由与导航', link: '/flutter/routing' },
+          { text: '状态管理', link: '/flutter/state-management' },
+          { text: '网络与数据', link: '/flutter/network' },
+          { text: '本地存储', link: '/flutter/storage' },
+          { text: '动画与交互', link: '/flutter/animation' },
+          { text: '平台集成', link: '/flutter/platform' },
+          { text: '测试与调试', link: '/flutter/testing' },
+          { text: '性能优化', link: '/flutter/performance' },
+          { text: '生态与插件', link: '/flutter/ecosystem' },
+          { text: '实战项目', link: '/flutter/projects' }
         ]
       },
     ],
@@ -1202,6 +1228,44 @@ export default defineConfig({
             { text: '智能搜索与推荐', link: '/ai-agent/cases/search' },
             { text: 'RPA 流程机器人', link: '/ai-agent/cases/rpa' },
             { text: '其他应用', link: '/ai-agent/cases/others' }
+          ]
+        }
+      ],
+      /**
+       * Flutter 侧边栏配置
+       * @type {import('vitepress').DefaultTheme.Sidebar}
+       * @description 覆盖Flutter基础、进阶、生态、实战、工具等内容，结构与其他技术栈一致
+       */
+      '/flutter/': [
+        {
+          text: 'Flutter 基础',
+          items: [
+            { text: 'Flutter简介', link: '/flutter/' },
+            { text: '环境搭建', link: '/flutter/setup' },
+            { text: '开发工具链', link: '/flutter/tooling' },
+            { text: '基础语法', link: '/flutter/basics' },
+            { text: '核心组件', link: '/flutter/widgets' },
+            { text: '布局与样式', link: '/flutter/layout' },
+            { text: '路由与导航', link: '/flutter/routing' },
+            { text: '状态管理', link: '/flutter/state-management' },
+            { text: '网络与数据', link: '/flutter/network' },
+            { text: '本地存储', link: '/flutter/storage' },
+            { text: '动画与交互', link: '/flutter/animation' },
+            { text: '平台集成', link: '/flutter/platform' }
+          ]
+        },
+        {
+          text: '进阶与生态',
+          items: [
+            { text: '测试与调试', link: '/flutter/testing' },
+            { text: '性能优化', link: '/flutter/performance' },
+            { text: '生态与插件', link: '/flutter/ecosystem' }
+          ]
+        },
+        {
+          text: '实战项目',
+          items: [
+            { text: '实战项目', link: '/flutter/projects' }
           ]
         }
       ],
