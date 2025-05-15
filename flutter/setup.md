@@ -9,22 +9,41 @@ title: 环境搭建
 
 # 环境搭建
 
-## 1. 安装Flutter SDK
+## Flutter SDK下载与安装
 - 访问 [Flutter官网](https://flutter.dev/) 下载对应平台的SDK。
 - 解压并配置环境变量（如 `PATH`）。
 
-## 2. 安装开发工具
-- 推荐使用 VS Code 或 Android Studio。
+## 配置环境变量
+- 将 `flutter/bin` 路径加入系统 PATH。
+- 终端输入 `flutter --version` 验证。
+
+## 常用IDE与插件
+- 推荐 VS Code、Android Studio、IntelliJ IDEA。
 - 安装 Flutter 和 Dart 插件。
 
-## 3. 验证安装
+## Android开发环境配置
+- 安装 Android Studio。
+- 配置 Android SDK、AVD 模拟器。
+- 设置 ANDROID_HOME 环境变量。
+
+## iOS开发环境配置
+- 仅限 macOS，需安装 Xcode。
+- 配置 Xcode 命令行工具。
+- 通过 Xcode 管理模拟器。
+
+## Web/桌面开发环境配置
+- Web：需 Chrome 浏览器。
+- 桌面：需开启桌面支持（`flutter config --enable-windows-desktop` 等）。
+
+## flutter doctor常见问题与解决
+- 运行 `flutter doctor` 检查依赖。
+- 根据提示安装缺失依赖。
+- 常见问题如 Android license、Xcode 版本等。
+
+## 第一个Flutter项目创建
 ```bash
-flutter doctor
+flutter create my_app
+cd my_app
+flutter run
 ```
-确保所有依赖项均已通过检查。
-
-## 4. 配置模拟器/真机
-- Android：安装 Android Studio 并配置 AVD。
-- iOS：需 macOS 并安装 Xcode。
-
-详细步骤可参考官方文档。 
+- 选择设备运行，体验热重载。 
