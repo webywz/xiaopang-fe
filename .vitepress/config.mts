@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import type { DefaultTheme } from 'vitepress'
 import { setupMarkdownPlugins } from './markdown-plugins'
 import { createShikiLoader } from './shiki-loader'
 import { createReactHighlightFix } from './react-highlight-fix'
@@ -90,324 +91,359 @@ export default defineConfig({
     nav: [
       { text: '首页', link: '/' },
       { 
-        text: '基础进阶', 
+        text: '前端开发', 
         items: [
-          { text: 'JavaScript深入', link: '/basic/JavaScript/' },
-          { text: 'CSS高级技巧', link: '/basic/css/' },
-          { text: 'HTML5新特性', link: '/basic/HTML/' },
-          { text: '浏览器原理', link: '/basic/browser/' },
-        ]
-      },
-      { 
-        text: '前端框架', 
-        items: [
-          { text: 'Vue', link: '/vue/' },
-          { text: 'React', link: '/react/' },
-          { text: 'TypeScript', link: '/typescript/' },
-          { text: 'uniapp', link: '/uniapp/uniapp-pitfalls/' },
-        ]
-      },
-      { 
-        text: '全栈开发', 
-        items: [
-          { text: 'nodeJs开发', link: '/basic/nodeJS/' },
-          { text: 'Next.js', link: '/nextjs/' },
-          { text: 'Nest.js', link: '/nestjs/' },
-        ]
-      },
-      {
-        text: 'Go语言',
-        items: [
-          { text: 'Go语言介绍', link: '/golang/' },
-          { text: '基础语法', link: '/golang/basics' },
-          { text: '数据结构', link: '/golang/data-structures' },
-          { text: '并发编程', link: '/golang/concurrency' },
-          { text: '标准库', link: '/golang/standard-library' },
-          { text: '数据库与ORM', link: '/golang/database' },
-          { text: '实战项目', link: '/golang/projects' },
-        ]
-      },
-      { 
-        text: 'Vue专题', 
-        items: [
-          { text: 'Vue源码分析', link: '/vue-source-code/' },
-          { text: 'Vue实践指南', link: '/vue-practical/' },
-        ]
-      },
-      {
-        text: 'Java',
-        items: [
-          { text: '环境搭建', link: '/java/setup' },
-          { text: '基础语法', link: '/java/basics' },
-          { text: '包与模块', link: '/java/packages-modules' },
-          { text: '面向对象', link: '/java/oop' },
-          { text: '集合框架', link: '/java/collections' },
-          { text: '异常处理', link: '/java/exception-handling' },
-          { text: 'IO流', link: '/java/io' },
-          { text: '并发编程', link: '/java/concurrency' },
-          { text: 'JVM与性能调优', link: '/java/jvm-performance' },
-          { text: '标准库', link: '/java/standard-library' },
-          { text: '常用工具类', link: '/java/utils' },
-          { text: '数据库与ORM', link: '/java/database' },
-          { text: '测试与Mock', link: '/java/testing' },
-          { text: '实战项目', link: '/java/projects' }
-        ]
-      },
-      {
-        text: 'Spring',
-        items: [
-          { text: '环境搭建', link: '/spring/springboot/setup' },
-          { text: '核心注解', link: '/spring/springboot/annotations' },
-          { text: '配置文件', link: '/spring/springboot/configuration' },
-          { text: 'Web开发', link: '/spring/springboot/web' },
-          { text: '数据访问', link: '/spring/springboot/data-access' },
-          { text: '安全与认证', link: '/spring/springboot/security' },
-          { text: '测试', link: '/spring/springboot/testing' },
-          { text: '部署', link: '/spring/springboot/deployment' },
-          { text: '实战项目', link: '/spring/springboot/projects' },
-          { text: 'Spring Cloud Alibaba', link: '/spring/spring-cloud-alibaba' },
-          { text: 'Spring Boot Admin', link: '/spring/spring-boot-admin' },
-          { text: 'Spring WebFlux', link: '/spring/spring-webflux' },
-          { text: 'Spring AMQP', link: '/spring/spring-amqp' },
-          { text: 'Spring Session', link: '/spring/spring-session' },
-          { text: 'Spring Integration', link: '/spring/spring-integration' },
-          { text: 'Spring Batch', link: '/spring/spring-batch' },
-          { text: 'Spring MVC', link: '/spring/spring-mvc' },
-          { text: 'Spring Cloud', link: '/spring/spring-cloud' },
-          { text: 'Spring Security', link: '/spring/spring-security' },
-          { text: 'Spring Data', link: '/spring/spring-data' },
-          { text: 'Spring Framework', link: '/spring/spring-framework' }
-        ]
-      },
-      {
-        text: 'Web3',
-        items: [
-          { text: 'Web3简介', link: '/web3/' },
-          { text: '以太坊基础', link: '/web3/ethereum' },
-          { text: '智能合约', link: '/web3/smart-contract' },
-          { text: '钱包与签名', link: '/web3/wallet' },
-          { text: 'DApp开发', link: '/web3/dapp' },
-          { text: '常见工具', link: '/web3/tools' },
-          { text: 'Web3.js', link: '/web3/web3js' }
-        ]
-      },
-      {
-        text: 'Solidity开发',
-        items: [
-          { text: '基础语法', link: '/solidity/basics' },
-          { text: '合约开发', link: '/solidity/contract-development' },
-          { text: '常用工具链', link: '/solidity/tooling' },
-          { text: '测试与调试', link: '/solidity/testing' },
-          { text: '安全与漏洞', link: '/solidity/security' },
-          { text: '性能与优化', link: '/solidity/optimization' },
-          { text: '主流开发框架', link: '/solidity/frameworks' },
-          { text: '实战项目', link: '/solidity/projects' }
-        ]
-      },
-      {
-        text: 'Python',
-        items: [
-          { text: 'Python简介', link: '/python/python/' },
-          { text: '环境搭建', link: '/python/setup' },
-          { text: '基础语法', link: '/python/basics' },
-          { text: '数据结构', link: '/python/data-structures' },
-          { text: '面向对象', link: '/python/oop' },
-          { text: '标准库', link: '/python/standard-library' },
-          { text: '第三方库', link: '/python/third-party' },
-          { text: 'Web开发', link: '/python/web' },
-          { text: '数据分析', link: '/python/data-analysis' },
-          { text: '机器学习', link: '/python/machine-learning' },
-          { text: '可视化', link: '/python/visualization' },
-          { text: '自动化脚本', link: '/python/automation' },
-          { text: '爬虫开发', link: '/python/spider' },
-          { text: '实战项目', link: '/python/projects' }
-        ]
-      },
-      {
-        /**
-         * SQL 相关导航配置（超级详细版）
-         * @description 覆盖所有主流 SQL 数据库，细分基础、进阶、性能、安全、工具、设计模式等
-         */
-        text: 'SQL',
-        items: [
-          { text: 'SQL 标准与历史', link: '/sql/standard' },
-          { text: 'SQL 设计模式', link: '/sql/patterns' },
-          { text: 'SQL 工具与生态', link: '/sql/tools' },
-          {
-            text: 'MySQL',
+          { 
+            text: '基础进阶', 
             items: [
-              { text: '基础语法', link: '/sql/mysql/basics' },
-              { text: '数据类型', link: '/sql/mysql/types' },
-              { text: '查询与操作', link: '/sql/mysql/query' },
-              { text: '事务与锁', link: '/sql/mysql/transaction' },
-              { text: '视图与索引', link: '/sql/mysql/view-index' },
-              { text: '存储过程与函数', link: '/sql/mysql/procedure' },
-              { text: '性能优化', link: '/sql/mysql/performance' },
-              { text: '安全与权限', link: '/sql/mysql/security' },
-              { text: '备份与恢复', link: '/sql/mysql/backup' },
-              { text: '实战案例', link: '/sql/projects/mysql' },
-              { text: '工具链', link: '/sql/mysql/tools' }
+              { text: 'JavaScript深入', link: '/basic/JavaScript/' },
+              { text: 'CSS高级技巧', link: '/basic/css/' },
+              { text: 'HTML5新特性', link: '/basic/HTML/' },
+              { text: '浏览器原理', link: '/basic/browser/' },
             ]
           },
-          {
-            text: 'PostgreSQL',
+          { 
+            text: '前端框架', 
             items: [
-              { text: '基础语法', link: '/sql/postgresql/basics' },
-              { text: '数据类型', link: '/sql/postgresql/types' },
-              { text: '查询与操作', link: '/sql/postgresql/query' },
-              { text: '事务与锁', link: '/sql/postgresql/transaction' },
-              { text: '视图与索引', link: '/sql/postgresql/view-index' },
-              { text: '存储过程与函数', link: '/sql/postgresql/procedure' },
-              { text: '性能优化', link: '/sql/postgresql/performance' },
-              { text: '安全与权限', link: '/sql/postgresql/security' },
-              { text: '备份与恢复', link: '/sql/postgresql/backup' },
-              { text: '实战案例', link: '/sql/projects/postgresql' },
-              { text: '工具链', link: '/sql/postgresql/tools' }
+              { text: 'Vue', link: '/vue/' },
+              { text: 'React', link: '/react/' },
+              { text: 'TypeScript', link: '/typescript/' },
+              { text: 'uniapp', link: '/uniapp/uniapp-pitfalls/' },
             ]
           },
-          {
-            text: 'SQLite',
+          { 
+            text: 'Vue专题', 
             items: [
-              { text: '基础语法', link: '/sql/sqlite/basics' },
-              { text: '数据类型', link: '/sql/sqlite/types' },
-              { text: '查询与操作', link: '/sql/sqlite/query' },
-              { text: '事务与锁', link: '/sql/sqlite/transaction' },
-              { text: '视图与索引', link: '/sql/sqlite/view-index' },
-              { text: '存储过程与函数', link: '/sql/sqlite/procedure' },
-              { text: '性能优化', link: '/sql/sqlite/performance' },
-              { text: '安全与权限', link: '/sql/sqlite/security' },
-              { text: '备份与恢复', link: '/sql/sqlite/backup' },
-              { text: '实战案例', link: '/sql/projects/sqlite' },
-              { text: '工具链', link: '/sql/sqlite/tools' }
+              { text: 'Vue源码分析', link: '/vue-source-code/' },
+              { text: 'Vue实践指南', link: '/vue-practical/' },
             ]
           },
-          {
-            text: 'Oracle',
+          { 
+            text: '全栈开发', 
             items: [
-              { text: '基础语法', link: '/sql/oracle/basics' },
-              { text: '数据类型', link: '/sql/oracle/types' },
-              { text: '查询与操作', link: '/sql/oracle/query' },
-              { text: '事务与锁', link: '/sql/oracle/transaction' },
-              { text: '视图与索引', link: '/sql/oracle/view-index' },
-              { text: '存储过程与函数', link: '/sql/oracle/procedure' },
-              { text: '性能优化', link: '/sql/oracle/performance' },
-              { text: '安全与权限', link: '/sql/oracle/security' },
-              { text: '备份与恢复', link: '/sql/oracle/backup' },
-              { text: '实战案例', link: '/sql/projects/oracle' },
-              { text: '工具链', link: '/sql/oracle/tools' }
-            ]
-          },
-          {
-            text: 'SQL Server',
-            items: [
-              { text: '基础语法', link: '/sql/sqlserver/basics' },
-              { text: '数据类型', link: '/sql/sqlserver/types' },
-              { text: '查询与操作', link: '/sql/sqlserver/query' },
-              { text: '事务与锁', link: '/sql/sqlserver/transaction' },
-              { text: '视图与索引', link: '/sql/sqlserver/view-index' },
-              { text: '存储过程与函数', link: '/sql/sqlserver/procedure' },
-              { text: '性能优化', link: '/sql/sqlserver/performance' },
-              { text: '安全与权限', link: '/sql/sqlserver/security' },
-              { text: '备份与恢复', link: '/sql/sqlserver/backup' },
-              { text: '实战案例', link: '/sql/projects/sqlserver' },
-              { text: '工具链', link: '/sql/sqlserver/tools' }
+              { text: 'nodeJs开发', link: '/basic/nodeJS/' },
+              { text: 'Next.js', link: '/nextjs/' },
+              { text: 'Nest.js', link: '/nestjs/' },
             ]
           }
         ]
       },
       {
-        /**
-         * AI Agent 相关导航配置（超级详细版）
-         * @description 覆盖主流 AI Agent 框架、能力、Ops、Prompt 工程、应用等
-         */
-        text: 'AI Agent',
+        text: '后端开发',
         items: [
-          { text: 'AI Agent 简介', link: '/ai-agent/' },
-          { text: '核心原理', link: '/ai-agent/principle' },
-          { text: '常用术语', link: '/ai-agent/terms' },
           {
-            text: '主流框架',
+            text: 'Java',
             items: [
-              { text: 'LangChain', link: '/ai-agent/frameworks/langchain' },
-              { text: 'AutoGen', link: '/ai-agent/frameworks/autogen' },
-              { text: 'CrewAI', link: '/ai-agent/frameworks/crewai' },
-              { text: 'MetaGPT', link: '/ai-agent/frameworks/metagpt' },
-              { text: 'Haystack', link: '/ai-agent/frameworks/haystack' },
-              { text: 'Flowise', link: '/ai-agent/frameworks/flowise' },
-              { text: 'AgentVerse', link: '/ai-agent/frameworks/agentverse' },
-              { text: '其他框架', link: '/ai-agent/frameworks/others' }
+              { text: '环境搭建', link: '/java/setup' },
+              { text: '基础语法', link: '/java/basics' },
+              { text: '包与模块', link: '/java/packages-modules' },
+              { text: '面向对象', link: '/java/oop' },
+              { text: '集合框架', link: '/java/collections' },
+              { text: '异常处理', link: '/java/exception-handling' },
+              { text: 'IO流', link: '/java/io' },
+              { text: '并发编程', link: '/java/concurrency' },
+              { text: 'JVM与性能调优', link: '/java/jvm-performance' },
+              { text: '标准库', link: '/java/standard-library' },
+              { text: '常用工具类', link: '/java/utils' },
+              { text: '数据库与ORM', link: '/java/database' },
+              { text: '测试与Mock', link: '/java/testing' },
+              { text: '实战项目', link: '/java/projects' }
             ]
           },
           {
-            text: '能力与组件',
+            text: 'Spring',
             items: [
-              { text: '感知与解析', link: '/ai-agent/abilities/perception' },
-              { text: '规划与决策', link: '/ai-agent/abilities/planning' },
-              { text: '行动与执行', link: '/ai-agent/abilities/action' },
-              { text: '自主学习', link: '/ai-agent/abilities/learning' },
-              { text: '多智能体协作', link: '/ai-agent/abilities/multi-agent' },
-              { text: '工具集成', link: '/ai-agent/abilities/tools' },
-              { text: '记忆与知识库', link: '/ai-agent/abilities/memory' },
-              { text: '环境交互', link: '/ai-agent/abilities/environment' }
+              { text: '环境搭建', link: '/spring/springboot/setup' },
+              { text: '核心注解', link: '/spring/springboot/annotations' },
+              { text: '配置文件', link: '/spring/springboot/configuration' },
+              { text: 'Web开发', link: '/spring/springboot/web' },
+              { text: '数据访问', link: '/spring/springboot/data-access' },
+              { text: '安全与认证', link: '/spring/springboot/security' },
+              { text: '测试', link: '/spring/springboot/testing' },
+              { text: '部署', link: '/spring/springboot/deployment' },
+              { text: '实战项目', link: '/spring/springboot/projects' },
+              { text: 'Spring Cloud Alibaba', link: '/spring/spring-cloud-alibaba' },
+              { text: 'Spring Boot Admin', link: '/spring/spring-boot-admin' },
+              { text: 'Spring WebFlux', link: '/spring/spring-webflux' },
+              { text: 'Spring AMQP', link: '/spring/spring-amqp' },
+              { text: 'Spring Session', link: '/spring/spring-session' },
+              { text: 'Spring Integration', link: '/spring/spring-integration' },
+              { text: 'Spring Batch', link: '/spring/spring-batch' },
+              { text: 'Spring MVC', link: '/spring/spring-mvc' },
+              { text: 'Spring Cloud', link: '/spring/spring-cloud' },
+              { text: 'Spring Security', link: '/spring/spring-security' },
+              { text: 'Spring Data', link: '/spring/spring-data' },
+              { text: 'Spring Framework', link: '/spring/spring-framework' }
             ]
           },
           {
-            text: 'AgentOps',
+            text: 'Go语言',
             items: [
-              { text: 'AgentOps 概述', link: '/ai-agent/agentops' },
-              { text: '监控与评估', link: '/ai-agent/agentops/monitor' },
-              { text: '持续优化', link: '/ai-agent/agentops/optimize' },
-              { text: '安全与合规', link: '/ai-agent/agentops/security' },
-              { text: '部署与运维', link: '/ai-agent/agentops/deploy' }
+              { text: 'Go语言介绍', link: '/golang/' },
+              { text: '基础语法', link: '/golang/basics' },
+              { text: '数据结构', link: '/golang/data-structures' },
+              { text: '并发编程', link: '/golang/concurrency' },
+              { text: '标准库', link: '/golang/standard-library' },
+              { text: '数据库与ORM', link: '/golang/database' },
+              { text: '实战项目', link: '/golang/projects' },
             ]
           },
           {
-            text: 'Prompt 工程',
+            text: 'Python',
             items: [
-              { text: 'Prompt 设计', link: '/ai-agent/prompt' },
-              { text: '提示词模式', link: '/ai-agent/prompt/patterns' },
-              { text: '实战案例', link: '/ai-agent/prompt/cases' },
-              { text: '多轮对话', link: '/ai-agent/prompt/multi-turn' },
-              { text: '上下文管理', link: '/ai-agent/prompt/context' }
-            ]
-          },
-          {
-            text: '应用案例',
-            items: [
-              { text: '智能问答', link: '/ai-agent/cases/qa' },
-              { text: '自动化办公', link: '/ai-agent/cases/office' },
-              { text: '多智能体协作', link: '/ai-agent/cases/multi-agent' },
-              { text: '自动编程', link: '/ai-agent/cases/code' },
-              { text: '自动化科研', link: '/ai-agent/cases/research' },
-              { text: '智能搜索与推荐', link: '/ai-agent/cases/search' },
-              { text: 'RPA 流程机器人', link: '/ai-agent/cases/rpa' },
-              { text: '其他应用', link: '/ai-agent/cases/others' }
+              { text: 'Python简介', link: '/python/python/' },
+              { text: '环境搭建', link: '/python/setup' },
+              { text: '基础语法', link: '/python/basics' },
+              { text: '数据结构', link: '/python/data-structures' },
+              { text: '面向对象', link: '/python/oop' },
+              { text: '标准库', link: '/python/standard-library' },
+              { text: '第三方库', link: '/python/third-party' },
+              { text: 'Web开发', link: '/python/web' },
+              { text: '数据分析', link: '/python/data-analysis' },
+              { text: '机器学习', link: '/python/machine-learning' },
+              { text: '可视化', link: '/python/visualization' },
+              { text: '自动化脚本', link: '/python/automation' },
+              { text: '爬虫开发', link: '/python/spider' },
+              { text: '实战项目', link: '/python/projects' }
             ]
           }
         ]
       },
       {
-        text: 'Flutter',
+        text: '数据库',
         items: [
-          { text: 'Flutter简介', link: '/flutter/' },
-          { text: '环境搭建', link: '/flutter/setup' },
-          { text: '开发工具链', link: '/flutter/tooling' },
-          { text: '基础语法', link: '/flutter/basics' },
-          { text: '核心组件', link: '/flutter/widgets' },
-          { text: '布局与样式', link: '/flutter/layout' },
-          { text: '路由与导航', link: '/flutter/routing' },
-          { text: '状态管理', link: '/flutter/state-management' },
-          { text: '网络与数据', link: '/flutter/network' },
-          { text: '本地存储', link: '/flutter/storage' },
-          { text: '动画与交互', link: '/flutter/animation' },
-          { text: '平台集成', link: '/flutter/platform' },
-          { text: '测试与调试', link: '/flutter/testing' },
-          { text: '性能优化', link: '/flutter/performance' },
-          { text: '生态与插件', link: '/flutter/ecosystem' },
-          { text: '实战项目', link: '/flutter/projects' }
+          {
+            text: 'SQL',
+            items: [
+              { text: 'SQL 标准与历史', link: '/sql/standard' },
+              { text: 'SQL 设计模式', link: '/sql/patterns' },
+              { text: 'SQL 工具与生态', link: '/sql/tools' },
+              {
+                text: 'MySQL',
+                items: [
+                  { text: '基础语法', link: '/sql/mysql/basics' },
+                  { text: '数据类型', link: '/sql/mysql/types' },
+                  { text: '查询与操作', link: '/sql/mysql/query' },
+                  { text: '事务与锁', link: '/sql/mysql/transaction' },
+                  { text: '视图与索引', link: '/sql/mysql/view-index' },
+                  { text: '存储过程与函数', link: '/sql/mysql/procedure' },
+                  { text: '性能优化', link: '/sql/mysql/performance' },
+                  { text: '安全与权限', link: '/sql/mysql/security' },
+                  { text: '备份与恢复', link: '/sql/mysql/backup' },
+                  { text: '实战案例', link: '/sql/projects/mysql' },
+                  { text: '工具链', link: '/sql/mysql/tools' }
+                ]
+              },
+              {
+                text: 'PostgreSQL',
+                items: [
+                  { text: '基础语法', link: '/sql/postgresql/basics' },
+                  { text: '数据类型', link: '/sql/postgresql/types' },
+                  { text: '查询与操作', link: '/sql/postgresql/query' },
+                  { text: '事务与锁', link: '/sql/postgresql/transaction' },
+                  { text: '视图与索引', link: '/sql/postgresql/view-index' },
+                  { text: '存储过程与函数', link: '/sql/postgresql/procedure' },
+                  { text: '性能优化', link: '/sql/postgresql/performance' },
+                  { text: '安全与权限', link: '/sql/postgresql/security' },
+                  { text: '备份与恢复', link: '/sql/postgresql/backup' },
+                  { text: '实战案例', link: '/sql/projects/postgresql' },
+                  { text: '工具链', link: '/sql/postgresql/tools' }
+                ]
+              },
+              {
+                text: 'SQLite',
+                items: [
+                  { text: '基础语法', link: '/sql/sqlite/basics' },
+                  { text: '数据类型', link: '/sql/sqlite/types' },
+                  { text: '查询与操作', link: '/sql/sqlite/query' },
+                  { text: '事务与锁', link: '/sql/sqlite/transaction' },
+                  { text: '视图与索引', link: '/sql/sqlite/view-index' },
+                  { text: '存储过程与函数', link: '/sql/sqlite/procedure' },
+                  { text: '性能优化', link: '/sql/sqlite/performance' },
+                  { text: '安全与权限', link: '/sql/sqlite/security' },
+                  { text: '备份与恢复', link: '/sql/sqlite/backup' },
+                  { text: '实战案例', link: '/sql/projects/sqlite' },
+                  { text: '工具链', link: '/sql/sqlite/tools' }
+                ]
+              },
+              {
+                text: 'Oracle',
+                items: [
+                  { text: '基础语法', link: '/sql/oracle/basics' },
+                  { text: '数据类型', link: '/sql/oracle/types' },
+                  { text: '查询与操作', link: '/sql/oracle/query' },
+                  { text: '事务与锁', link: '/sql/oracle/transaction' },
+                  { text: '视图与索引', link: '/sql/oracle/view-index' },
+                  { text: '存储过程与函数', link: '/sql/oracle/procedure' },
+                  { text: '性能优化', link: '/sql/oracle/performance' },
+                  { text: '安全与权限', link: '/sql/oracle/security' },
+                  { text: '备份与恢复', link: '/sql/oracle/backup' },
+                  { text: '实战案例', link: '/sql/projects/oracle' },
+                  { text: '工具链', link: '/sql/oracle/tools' }
+                ]
+              },
+              {
+                text: 'SQL Server',
+                items: [
+                  { text: '基础语法', link: '/sql/sqlserver/basics' },
+                  { text: '数据类型', link: '/sql/sqlserver/types' },
+                  { text: '查询与操作', link: '/sql/sqlserver/query' },
+                  { text: '事务与锁', link: '/sql/sqlserver/transaction' },
+                  { text: '视图与索引', link: '/sql/sqlserver/view-index' },
+                  { text: '存储过程与函数', link: '/sql/sqlserver/procedure' },
+                  { text: '性能优化', link: '/sql/sqlserver/performance' },
+                  { text: '安全与权限', link: '/sql/sqlserver/security' },
+                  { text: '备份与恢复', link: '/sql/sqlserver/backup' },
+                  { text: '实战案例', link: '/sql/projects/sqlserver' },
+                  { text: '工具链', link: '/sql/sqlserver/tools' }
+                ]
+              },
+              {
+                text: 'Redis',
+                items: [
+                  { text: 'Redis 简介', link: '/sql/redis/' },
+                  { text: '数据结构', link: '/sql/redis/data-structure' },
+                  { text: '高级特性', link: '/sql/redis/advanced' },
+                  { text: '实践指南', link: '/sql/redis/practice' },
+                  { text: '代码示例', link: '/sql/redis/code' },
+                  { text: '安全配置', link: '/sql/redis/security' },
+                  { text: '常见问题', link: '/sql/redis/faq' },
+                  { text: '实战案例', link: '/sql/redis/cases' }
+                ]
+              }
+            ]
+          }
         ]
       },
-    ],
+      {
+        text: '移动开发',
+        items: [
+          {
+            text: 'Flutter',
+            items: [
+              { text: 'Flutter简介', link: '/flutter/' },
+              { text: '环境搭建', link: '/flutter/setup' },
+              { text: '开发工具链', link: '/flutter/tooling' },
+              { text: '基础语法', link: '/flutter/basics' },
+              { text: '核心组件', link: '/flutter/widgets' },
+              { text: '布局与样式', link: '/flutter/layout' },
+              { text: '路由与导航', link: '/flutter/routing' },
+              { text: '状态管理', link: '/flutter/state-management' },
+              { text: '网络与数据', link: '/flutter/network' },
+              { text: '本地存储', link: '/flutter/storage' },
+              { text: '动画与交互', link: '/flutter/animation' },
+              { text: '平台集成', link: '/flutter/platform' },
+              { text: '测试与调试', link: '/flutter/testing' },
+              { text: '性能优化', link: '/flutter/performance' },
+              { text: '生态与插件', link: '/flutter/ecosystem' },
+              { text: '实战项目', link: '/flutter/projects' }
+            ]
+          }
+        ]
+      },
+      {
+        text: '区块链',
+        items: [
+          {
+            text: 'Web3',
+            items: [
+              { text: 'Web3简介', link: '/web3/' },
+              { text: '以太坊基础', link: '/web3/ethereum' },
+              { text: '智能合约', link: '/web3/smart-contract' },
+              { text: '钱包与签名', link: '/web3/wallet' },
+              { text: 'DApp开发', link: '/web3/dapp' },
+              { text: '常见工具', link: '/web3/tools' },
+              { text: 'Web3.js', link: '/web3/web3js' }
+            ]
+          },
+          {
+            text: 'Solidity开发',
+            items: [
+              { text: '基础语法', link: '/solidity/basics' },
+              { text: '合约开发', link: '/solidity/contract-development' },
+              { text: '常用工具链', link: '/solidity/tooling' },
+              { text: '测试与调试', link: '/solidity/testing' },
+              { text: '安全与漏洞', link: '/solidity/security' },
+              { text: '性能与优化', link: '/solidity/optimization' },
+              { text: '主流开发框架', link: '/solidity/frameworks' },
+              { text: '实战项目', link: '/solidity/projects' }
+            ]
+          }
+        ]
+      },
+      {
+        text: 'AI开发',
+        items: [
+          {
+            text: 'AI Agent',
+            items: [
+              { text: 'AI Agent 简介', link: '/ai-agent/' },
+              { text: '核心原理', link: '/ai-agent/principle' },
+              { text: '常用术语', link: '/ai-agent/terms' },
+              {
+                text: '主流框架',
+                items: [
+                  { text: 'LangChain', link: '/ai-agent/frameworks/langchain' },
+                  { text: 'AutoGen', link: '/ai-agent/frameworks/autogen' },
+                  { text: 'CrewAI', link: '/ai-agent/frameworks/crewai' },
+                  { text: 'MetaGPT', link: '/ai-agent/frameworks/metagpt' },
+                  { text: 'Haystack', link: '/ai-agent/frameworks/haystack' },
+                  { text: 'Flowise', link: '/ai-agent/frameworks/flowise' },
+                  { text: 'AgentVerse', link: '/ai-agent/frameworks/agentverse' },
+                  { text: '其他框架', link: '/ai-agent/frameworks/others' }
+                ]
+              },
+              {
+                text: '能力与组件',
+                items: [
+                  { text: '感知与解析', link: '/ai-agent/abilities/perception' },
+                  { text: '规划与决策', link: '/ai-agent/abilities/planning' },
+                  { text: '行动与执行', link: '/ai-agent/abilities/action' },
+                  { text: '自主学习', link: '/ai-agent/abilities/learning' },
+                  { text: '多智能体协作', link: '/ai-agent/abilities/multi-agent' },
+                  { text: '工具集成', link: '/ai-agent/abilities/tools' },
+                  { text: '记忆与知识库', link: '/ai-agent/abilities/memory' },
+                  { text: '环境交互', link: '/ai-agent/abilities/environment' }
+                ]
+              },
+              {
+                text: 'AgentOps',
+                items: [
+                  { text: 'AgentOps 概述', link: '/ai-agent/agentops' },
+                  { text: '监控与评估', link: '/ai-agent/agentops/monitor' },
+                  { text: '持续优化', link: '/ai-agent/agentops/optimize' },
+                  { text: '安全与合规', link: '/ai-agent/agentops/security' },
+                  { text: '部署与运维', link: '/ai-agent/agentops/deploy' }
+                ]
+              },
+              {
+                text: 'Prompt 工程',
+                items: [
+                  { text: 'Prompt 设计', link: '/ai-agent/prompt' },
+                  { text: '提示词模式', link: '/ai-agent/prompt/patterns' },
+                  { text: '实战案例', link: '/ai-agent/prompt/cases' },
+                  { text: '多轮对话', link: '/ai-agent/prompt/multi-turn' },
+                  { text: '上下文管理', link: '/ai-agent/prompt/context' }
+                ]
+              },
+              {
+                text: '应用案例',
+                items: [
+                  { text: '智能问答', link: '/ai-agent/cases/qa' },
+                  { text: '自动化办公', link: '/ai-agent/cases/office' },
+                  { text: '多智能体协作', link: '/ai-agent/cases/multi-agent' },
+                  { text: '自动编程', link: '/ai-agent/cases/code' },
+                  { text: '自动化科研', link: '/ai-agent/cases/research' },
+                  { text: '智能搜索与推荐', link: '/ai-agent/cases/search' },
+                  { text: 'RPA 流程机器人', link: '/ai-agent/cases/rpa' },
+                  { text: '其他应用', link: '/ai-agent/cases/others' }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ] as DefaultTheme.NavItem[],
 
     sidebar: {
       /**
@@ -1154,6 +1190,19 @@ export default defineConfig({
             { text: '备份与恢复', link: '/sql/sqlserver/backup' },
             { text: '实战案例', link: '/sql/projects/sqlserver' },
             { text: '工具链', link: '/sql/sqlserver/tools' }
+          ]
+        },
+        {
+          text: 'Redis',
+          items: [
+            { text: 'Redis 简介', link: '/sql/redis/' },
+            { text: '数据结构', link: '/sql/redis/data-structure' },
+            { text: '高级特性', link: '/sql/redis/advanced' },
+            { text: '实践指南', link: '/sql/redis/practice' },
+            { text: '代码示例', link: '/sql/redis/code' },
+            { text: '安全配置', link: '/sql/redis/security' },
+            { text: '常见问题', link: '/sql/redis/faq' },
+            { text: '实战案例', link: '/sql/redis/cases' }
           ]
         }
       ],
