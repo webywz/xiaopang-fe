@@ -116,7 +116,7 @@ export default defineConfig({
           { 
             text: '全栈开发', 
             items: [
-              { text: 'nodeJs开发', link: '/basic/nodeJS/' },
+              { text: 'nodeJs', link: '/basic/nodejs/' },
               { text: 'Next.js', link: '/nextjs/' },
               { text: 'Nest.js', link: '/nestjs/' },
             ]
@@ -721,7 +721,7 @@ export default defineConfig({
             { text: '组件设计模式', link: '/vue-practical/component-patterns' },
             { text: '状态管理实践', link: '/vue-practical/state-management' },
             { text: '路由最佳实践', link: '/vue-practical/routing-practices' },
-            { text: '单元测试模式', link: '/vue-practical/unit-test-patterns' }
+            { text: '单元测试模式', link: '/vue-practical/unit-testing-patterns' }
           ]
         }
       ],
@@ -921,17 +921,23 @@ export default defineConfig({
           collapsed: false,
           items: [
             { text: 'Node.js 简介', link: '/basic/nodejs/' },
-            { text: '模块系统', link: '/basic/nodejs/module-system' },
-            { text: '文件与路径操作', link: '/basic/nodejs/file-path' },
-            { text: '异步与事件循环', link: '/basic/nodejs/async-event-loop' },
-            { text: '进程与线程', link: '/basic/nodejs/process-thread' },
-            { text: '网络编程', link: '/basic/nodejs/network' },
-            { text: '流与缓冲区', link: '/basic/nodejs/stream-buffer' },
-            { text: '包管理与npm', link: '/basic/nodejs/npm' },
-            { text: '常用内置模块', link: '/basic/nodejs/built-in-modules' },
-            { text: '测试与调试', link: '/basic/nodejs/testing-debugging' },
-            { text: 'Node.js 性能优化', link: '/basic/nodejs/performance' },
-            { text: 'Node.js 实战项目', link: '/basic/nodejs/projects' }
+            { text: '模块系统', link: '/basic/nodejs/nodejs-module-system' },
+            { text: '文件与路径操作', link: '/basic/nodejs/node-file-path' },
+            { text: '异步编程', link: '/basic/nodejs/nodejs-async-programming' },
+            { text: '事件循环', link: '/basic/nodejs/nodejs-event-loop' },
+            { text: '进程与线程', link: '/basic/nodejs/nodejs-threads-processes' },
+            { text: '流与缓冲区', link: '/basic/nodejs/nodejs-buffers-streams' },
+            { text: '数据流', link: '/basic/nodejs/nodejs-data-streaming' },
+            { text: '缓存策略', link: '/basic/nodejs/nodejs-caching-strategies' },
+            { text: '内存管理', link: '/basic/nodejs/nodejs-memory-management' },
+            { text: '数据库集成', link: '/basic/nodejs/nodejs-database-integration' },
+            { text: 'MongoDB 高级', link: '/basic/nodejs/nodejs-mongodb-advanced' },
+            { text: 'RESTful API 设计', link: '/basic/nodejs/nodejs-restful-api-design' },
+            { text: '微服务', link: '/basic/nodejs/nodejs-microservices' },
+            { text: 'CI/CD', link: '/basic/nodejs/nodejs-ci-cd' },
+            { text: '监控', link: '/basic/nodejs/nodejs-monitoring' },
+            { text: '安全实践', link: '/basic/nodejs/nodejs-security-practices' },
+            { text: 'Docker 部署', link: '/basic/nodejs/nodejs-docker-deployment' },
           ]
         }
       ],
