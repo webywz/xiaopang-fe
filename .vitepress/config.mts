@@ -1,10 +1,5 @@
 import { defineConfig } from 'vitepress'
 import type { DefaultTheme } from 'vitepress'
-import { setupMarkdownPlugins } from './markdown-plugins'
-import { createShikiLoader } from './shiki-loader'
-import { createReactHighlightFix } from './react-highlight-fix'
-import { createHtmlTemplateFix } from './html-template-fix'
-import { createHtmlSpecialTagsFix } from './html-special-tags-fix'
 
 /**
  * 配置 VitePress 代码高亮主题，支持亮/暗模式自动切换
@@ -1392,100 +1387,8 @@ export default defineConfig({
       light: 'github-light',
       dark: 'github-dark'
     },
-    config: (md) => {
-      setupMarkdownPlugins(md);
-    }
+    // config: (md) => {
+    //   setupMarkdownPlugins(md);
+    // }
   },
-  
-  // 添加一个新的插件直接解决问题文件
-  vite: {
-    plugins: [
-      // 添加通用的HTML特殊标签修复插件，最高优先级
-      createHtmlSpecialTagsFix(),
-      // 添加 HTML 模板修复插件，高优先级处理模板标签
-      createHtmlTemplateFix(),
-      // 添加 Shiki 加载器插件，确保稳定性
-      createShikiLoader(),
-      // 添加 React 代码高亮修复插件
-      createReactHighlightFix(),
-      // 添加处理 Shiki 错误的插件
-      {
-        name: 'fix-shiki-errors',
-        enforce: 'pre',
-        configureServer(server) {
-          // 在服务器错误时提供更友好的错误处理
-          return () => {
-            server.middlewares.use((err, req, res, next) => {
-              if (err && err.message && err.message.includes('Shiki instance has been disposed')) {
-                console.log('捕获到 Shiki 错误，尝试恢复...');
-                // 尝试恢复或提供友好错误信息
-                if (next) next();
-              } else if (next) {
-                next(err);
-              }
-            });
-          };
-        }
-      },
-      // 在原有插件之前添加一个专门处理问题文件的插件
-      {
-        name: 'fix-jsdoc-syntax',
-        enforce: 'pre',
-        transform(code, id) {
-          // 只处理特定的问题文件
-          if (id.includes('nodejs-module-system.md')) {
-            return code.replace(/@returns\s+\{Promise<([^>]+)>\}/g, '@returns {Promise< $1 >}');
-          }
-          return null;
-        }
-      },
-      {
-        // 自定义插件，处理特定文件
-        name: 'fix-typescript-syntax',
-        enforce: 'pre',
-        transform(code, id) {
-          // 处理任何包含TypeScript代码的Markdown文件
-          if (id.endsWith('.md') && (
-            id.includes('/typescript') || 
-            id.includes('/react') || 
-            code.includes('```ts') || 
-            code.includes('```tsx')
-          )) {
-            // 预处理代码，避免Vue解析器对TypeScript泛型的错误解析
-            // 在 <T> 这样的泛型语法中添加空格，避免被识别为HTML标签
-            return code
-              // 处理function List<T>这样的泛型函数定义
-              .replace(/function\s+(\w+)<(\w+)>/g, 'function $1< $2 >')
-              // 处理const App = <T,>这样的泛型组件定义
-              .replace(/(\w+)\s*=\s*<(\w+)([,>])/g, '$1 = < $2$3')
-              // 处理type Name<T>这样的泛型类型定义
-              .replace(/type\s+(\w+)<(\w+)>/g, 'type $1< $2 >')
-              // 处理interface Name<T>这样的泛型接口定义
-              .replace(/interface\s+(\w+)<(\w+)>/g, 'interface $1< $2 >')
-              // 处理function name<T extends>这样的泛型约束
-              .replace(/<(\w+)\s+extends/g, '< $1 extends')
-              // 处理<T>()这样的泛型函数调用
-              .replace(/<(\w+)>\(/g, '< $1 >(')
-              // 处理React.FC<Props>这样的React类型
-              .replace(/(\w+)<(\w+)>/g, '$1< $2 >');
-          }
-          
-          // 处理JSDoc中可能被误识别为HTML标签的情况
-          if (id.endsWith('.md') && (
-            code.includes('@param {') || 
-            code.includes('@returns {') || 
-            code.includes('@throws {')
-          )) {
-            return code
-              // 在JSDoc类型标签中添加额外空格避免被识别为HTML标签
-              .replace(/@(\w+)\s+\{([^}]+)\}/g, '@$1 { $2 }')
-              // 处理Promise<Type>的情况
-              .replace(/Promise<([^>]+)>/g, 'Promise< $1 >');
-          }
-          
-          return null;
-        }
-      },
-    ]
-  }
 })

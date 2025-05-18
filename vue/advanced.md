@@ -124,10 +124,11 @@ export function useAdvancedFeature() {
 ### 异步组件和Suspense
 
 ```vue
-<script setup>
 /**
  * 异步组件和Suspense示例
  */
+
+<script setup>
 import { ref } from 'vue'
 import { defineAsyncComponent } from 'vue'
 
