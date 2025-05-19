@@ -127,6 +127,22 @@ export default defineConfig({
         text: '后端开发',
         items: [
           {
+            text: 'Linux',
+            items: [
+              { text: 'Linux基础', link: '/linux/basics' },
+              { text: '系统管理', link: '/linux/system-management' },
+              { text: 'Shell编程', link: '/linux/shell-programming' },
+              { text: '网络管理', link: '/linux/network' },
+              { text: '安全配置', link: '/linux/security' },
+              { text: '性能优化', link: '/linux/performance' },
+              { text: '容器技术', link: '/linux/containers' },
+              { text: '自动化运维', link: '/linux/automation' },
+              { text: '监控与日志', link: '/linux/monitoring' },
+              { text: '故障排查', link: '/linux/troubleshooting' },
+              { text: '实战案例', link: '/linux/cases' }
+            ]
+          },
+          {
             text: 'Java',
             items: [
               { text: '环境搭建', link: '/java/setup' },
@@ -1023,13 +1039,6 @@ export default defineConfig({
               ]
             },
             {
-              text: '状态管理系列',
-              collapsed: false,
-              items: [
-                { text: '现代前端状态管理最佳实践', link: '/blog/modern-state-management' },
-              ]
-            },
-            {
               text: 'TypeScript系列',
               collapsed: false,
               items: [
@@ -1316,6 +1325,28 @@ export default defineConfig({
           text: '实战项目',
           items: [
             { text: '实战项目', link: '/flutter/projects' }
+          ]
+        }
+      ],
+      /**
+       * Linux 侧边栏配置
+       * @type {import('vitepress').DefaultTheme.Sidebar}
+       */
+      '/linux/': [
+        {
+          text: 'Linux 基础',
+          items: [
+            { text: 'Linux简介', link: '/linux/basics' },
+            { text: '系统管理', link: '/linux/system-management' },
+            { text: 'Shell编程', link: '/linux/shell-programming' },
+            { text: '网络管理', link: '/linux/network' },
+            { text: '安全配置', link: '/linux/security' },
+            { text: '性能优化', link: '/linux/performance' },
+            { text: '容器技术', link: '/linux/containers' },
+            { text: '自动化运维', link: '/linux/automation' },
+            { text: '监控与日志', link: '/linux/monitoring' },
+            { text: '故障排查', link: '/linux/troubleshooting' },
+            { text: '实战案例', link: '/linux/cases' }
           ]
         }
       ],
