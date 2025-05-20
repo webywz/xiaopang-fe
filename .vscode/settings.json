@@ -1,6 +1,11 @@
 {
     "cSpell.words": [
+        "println",
+        "rustc",
+        "rustup",
         "springboot",
-        "uniapp"
+        "uniapp",
+        "usize",
+        "waitlist"
     ]
 }

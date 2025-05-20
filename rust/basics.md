@@ -28,6 +28,7 @@ static PROGRAM_NAME: &str = "Rust Demo";  // 静态变量
 ### 标量类型
 
 1. **整数类型**
+
    ```rust
    let a: i8 = 127;     // 有符号 8 位整数
    let b: u8 = 255;     // 无符号 8 位整数
@@ -36,18 +37,21 @@ static PROGRAM_NAME: &str = "Rust Demo";  // 静态变量
    ```
 
 2. **浮点类型**
+
    ```rust
    let x: f32 = 3.14;   // 32 位浮点数
    let y: f64 = 3.14;   // 64 位浮点数
    ```
 
 3. **布尔类型**
+
    ```rust
    let t = true;
    let f: bool = false;
    ```
 
 4. **字符类型**
+
    ```rust
    let c = 'z';
    let z: char = 'ℤ';
@@ -57,6 +61,7 @@ static PROGRAM_NAME: &str = "Rust Demo";  // 静态变量
 ### 复合类型
 
 1. **元组**
+
    ```rust
    let tup: (i32, f64, u8) = (500, 6.4, 1);
    let (x, y, z) = tup;  // 解构
@@ -64,6 +69,7 @@ static PROGRAM_NAME: &str = "Rust Demo";  // 静态变量
    ```
 
 2. **数组**
+
    ```rust
    let a = [1, 2, 3, 4, 5];
    let b: [i32; 5] = [1, 2, 3, 4, 5];
@@ -124,6 +130,7 @@ fn main() {
 ### 循环
 
 1. **loop**
+
    ```rust
    loop {
        println!("again!");
@@ -132,6 +139,7 @@ fn main() {
    ```
 
 2. **while**
+
    ```rust
    let mut number = 3;
    while number != 0 {
@@ -141,7 +149,8 @@ fn main() {
    ```
 
 3. **for**
-   ```rust
+
+```rust
    let a = [10, 20, 30, 40, 50];
    for element in a.iter() {
        println!("the value is: {}", element);
@@ -219,4 +228,4 @@ fn find_item(index: usize) -> Option<&'static str> {
 
 - 学习 [所有权系统](/rust/ownership)
 - 了解 [生命周期](/rust/lifetimes)
-- 探索 [泛型与特征](/rust/generics-traits) 
+- 探索 [泛型与特征](/rust/generics-traits)
