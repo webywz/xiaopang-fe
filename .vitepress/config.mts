@@ -217,6 +217,29 @@ export default defineConfig({
               { text: '爬虫开发', link: '/python/spider' },
               { text: '实战项目', link: '/python/projects' }
             ]
+          },
+          {
+            text: 'Rust',
+            items: [
+              { text: 'Rust简介', link: '/rust/' },
+              { text: '环境搭建', link: '/rust/setup' },
+              { text: '基础语法', link: '/rust/basics' },
+              { text: '所有权系统', link: '/rust/ownership' },
+              { text: '生命周期', link: '/rust/lifetimes' },
+              { text: '泛型与特征', link: '/rust/generics-traits' },
+              { text: '错误处理', link: '/rust/error-handling' },
+              { text: '并发编程', link: '/rust/concurrency' },
+              { text: '智能指针', link: '/rust/smart-pointers' },
+              { text: '宏编程', link: '/rust/macros' },
+              { text: '异步编程', link: '/rust/async' },
+              { text: '标准库', link: '/rust/standard-library' },
+              { text: '包管理', link: '/rust/cargo' },
+              { text: 'Web开发', link: '/rust/web' },
+              { text: '系统编程', link: '/rust/systems-programming' },
+              { text: '性能优化', link: '/rust/performance' },
+              { text: '安全编程', link: '/rust/safety' },
+              { text: '实战项目', link: '/rust/projects' }
+            ]
           }
         ]
       },
@@ -1347,6 +1370,45 @@ export default defineConfig({
             { text: '监控与日志', link: '/linux/monitoring' },
             { text: '故障排查', link: '/linux/troubleshooting' },
             { text: '实战案例', link: '/linux/cases' }
+          ]
+        }
+      ],
+      /**
+       * Rust 侧边栏配置
+       * @type {import('vitepress').DefaultTheme.Sidebar}
+       */
+      '/rust/': [
+        {
+          text: 'Rust 基础',
+          items: [
+            { text: 'Rust简介', link: '/rust/' },
+            { text: '环境搭建', link: '/rust/setup' },
+            { text: '基础语法', link: '/rust/basics' },
+            { text: '所有权系统', link: '/rust/ownership' },
+            { text: '生命周期', link: '/rust/lifetimes' },
+            { text: '泛型与特征', link: '/rust/generics-traits' },
+            { text: '错误处理', link: '/rust/error-handling' },
+            { text: '并发编程', link: '/rust/concurrency' },
+            { text: '智能指针', link: '/rust/smart-pointers' },
+            { text: '宏编程', link: '/rust/macros' }
+          ]
+        },
+        {
+          text: 'Rust 进阶',
+          items: [
+            { text: '异步编程', link: '/rust/async' },
+            { text: '标准库', link: '/rust/standard-library' },
+            { text: '包管理', link: '/rust/cargo' },
+            { text: 'Web开发', link: '/rust/web' },
+            { text: '系统编程', link: '/rust/systems-programming' },
+            { text: '性能优化', link: '/rust/performance' },
+            { text: '安全编程', link: '/rust/safety' }
+          ]
+        },
+        {
+          text: '实战项目',
+          items: [
+            { text: '实战项目', link: '/rust/projects' }
           ]
         }
       ],
