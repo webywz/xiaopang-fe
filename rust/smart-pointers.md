@@ -2,12 +2,11 @@
 
 智能指针是 Rust 中管理内存的重要工具，它们提供了比普通引用更多的功能和安全性。
 
-## Box < T>
+## Box\`T\`
 
 `Box<T>` 是最简单的智能指针，它允许在堆上分配数据。
 
 ```rust
-Box<T>
 fn main() {
     // 在堆上分配数据
     let b = Box::new(5);
@@ -28,12 +27,11 @@ fn main() {
 }
 ```
 
-## Rc < T>
+## Rc\`T\`
 
 `Rc<T>` 是引用计数智能指针，允许多个所有者共享数据。
 
 ```rust
-Rc <T>
 use std::rc::Rc;
 
 fn main() {
@@ -51,12 +49,11 @@ fn main() {
 }
 ```
 
-## RefCell < T>
+## RefCell\`T\`
 
 `RefCell<T>` 提供内部可变性，允许在不可变引用时修改数据。
 
 ```rust
-RefCell<T>
 use std::cell::RefCell;
 
 fn main() {
@@ -81,10 +78,9 @@ fn main() {
 
 ## 组合使用
 
-### Rc << RefCell T>>
+### Rc\`RefCell\`T\`\`
 
 ```rust
-Rc<RefCell<T>>
 use std::rc::Rc;
 use std::cell::RefCell;
 
@@ -113,12 +109,11 @@ fn main() {
 }
 ```
 
-## Cell < T>
+## Cell\`T\`
 
 `Cell<T>` 提供内部可变性，但只能用于实现了 `Copy` trait 的类型。
 
 ```rust
-Cell<T>
 use std::cell::Cell;
 
 fn main() {
@@ -134,12 +129,11 @@ fn main() {
 }
 ```
 
-## Mutex < T>
+## Mutex\`T\`
 
 `Mutex<T>` 提供线程安全的内部可变性。
 
 ```rust
-Mutex<T>
 use std::sync::Mutex;
 use std::thread;
 
@@ -164,12 +158,11 @@ fn main() {
 }
 ```
 
-## Arc< T>
+## Arc\`T\`
 
 `Arc<T>` 是线程安全的引用计数智能指针。
 
 ```rust
-Arc<T>
 use std::sync::Arc;
 use std::thread;
 
