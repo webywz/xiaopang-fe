@@ -1,11 +1,15 @@
 {
     "cSpell.words": [
+        "codegen",
         "LLDB",
+        "msvc",
         "println",
+        "rpath",
         "rustc",
         "rustup",
         "springboot",
         "uniapp",
+        "USERPROFILE",
         "usize",
         "waitlist"
     ]
