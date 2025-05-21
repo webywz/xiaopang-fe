@@ -7,6 +7,7 @@
   "scripts": {
     "docs:dev": "vitepress dev",
     "docs:build": "cross-env NODE_OPTIONS=--max-old-space-size=8096 npx vitepress build",
-    "docs:preview": "vitepress preview"
+    "docs:preview": "vitepress preview",
+    "docs:deploy": "npm run docs:build && scp -r .vitepress/dist/* root@139.196.108.217:/www/wwwroot/blog.66688.store"
   }
 }
